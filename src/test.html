@@ -1,0 +1,41 @@
+<div className='darkbg container'>
+    <nav className="navbar navbar-expand-xl">
+    <ul className="navbar-nav">
+      <li className="nav-item">
+        <img src={iss_logo} alt='iss_logo' className='img-fluid logo'></img>
+      </li>
+      <ul className="navbar-nav">
+      <li className = 'nav-item'>
+      <img src = {bars} alt='bars' class = 'img-fluid logo'></img>
+      </li>
+      </ul>
+</ul>
+</nav>
+
+    </div>   <div class="darkbg container">
+    <nav class="navbar navbar-expand-xl">
+        <div id="navbarNavDropdown" class="navbar-collapse collapse">
+            <ul className="navbar-nav">
+                <li className="nav-item">
+                  <img src={iss_logo} alt='iss_logo' className='img-fluid logo'></img>
+                </li>
+            <ul class="navbar-nav">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Dropdown
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url('/login') }}">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url('/register') }}">Register</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</div>
