@@ -1,5 +1,6 @@
 body{
   background-color: black;
+  height: 100%;
 }
 .full-div{
   height: 100vh;
@@ -18,9 +19,30 @@ body{
   opacity: 1.0;
   transform: scale(1.2);
 }
-.main-text-font{
+.loading-container {
+  height: 100vh;
+}
+.loading-logo {
+  width: 30%;
+}
+.loading-margin-top-img{
+  margin-top: 20%
+}
+.loading-margin-top-text{
+  margin-top: 23%
+}
+.load-img{
+  margin-left: 60%;
+}
+.load-text{
+  margin-right: 25%;
+}
+.main-text-font, input, textarea{
   font-family: 'Oswald', sans-serif;
   font-size: 50px;
+}
+.loading-text-font{
+  font-family: 'Oswald', sans-serif;
 }
 .color-white{
   color: white;
@@ -28,6 +50,7 @@ body{
 .explain-text{
   font-family:'Raleway', sans-serif;
 }
+
 .animation-width{
   width: 20%;
 }
@@ -78,6 +101,18 @@ body{
   }
 }
 
+
+.input-custom {
+  border: 0;
+  outline: 0;
+  background: transparent;
+  border-bottom: 2px solid black;
+}
+.form-control:focus {
+  border-color: inherit;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
 .menu-button {
   background-color: Transparent;
   background-repeat:no-repeat;
@@ -91,6 +126,10 @@ body{
   -webkit-transform: translate(0);
   -moz-transform: translate(0);
   transform: translate(0);
+}
+
+.register-container{
+  height: 100%;
 }
 
 .modal-full {
@@ -190,7 +229,9 @@ a:hover
   margin-left: 24%;
   margin-top: -7%;
 }
-
+.awards-image{
+  width: 70%;
+}
 .proj_image {
   margin-left: 40%;
 }
@@ -251,5 +292,16 @@ a:hover
   60% {
     -webkit-transform: translateY(-15px);
             transform: translateY(-15px);
+  }
+}
+
+.img-jump {
+  animation: jump 1.5s ease 0s infinite normal ;
+ }
+ 
+@keyframes jump {
+  0% {
+  -webkit-transform: translateY(0);
+  transform: translateY(0);
   }
 }

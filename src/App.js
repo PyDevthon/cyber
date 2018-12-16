@@ -15,7 +15,9 @@ import series2 from './series_2.png';
 import series3 from './series_3.png';
 import gear2 from './medium_gear.png';
 import gear3 from './large_gear.png';
-import award_imgae from './awards.png';
+import award_image from './awards.png';
+import iss_logo_big from './iss_logo_big.png';
+import ReactLoading from 'react-loading';
 import AOS from 'aos';
 
 AOS.init()
@@ -24,12 +26,13 @@ class App extends Component {
   render() {
     return ( <Router>
       <div>
-        <Route exact path="/" component={Home} />
+        <Route exact path="/" component={HomeLoader} />
         <Route exact path="/contact" component={Contact} />
         <Route exact path="/about" component={AboutUs} />
         <Route exact path="/series" component={Series} />
         <Route exact path="/workshop" component={Workshop} />
         <Route exact path="/awards" component = {Awards}/>
+        <Route exact path="/register" component = {Register}/>
       </div>
     </Router>
     )
@@ -116,7 +119,51 @@ YOUR FRIENDS</b>
   <Menu></Menu>
   </div>
 }
-const Home = () =>{
+
+const LoadingBar = ({ type, color, className }) => (
+  <ReactLoading type={type} color={color} height={50} width={50} className={className} />
+);
+
+class HomeLoader extends React.Component{
+  constructor(){
+    super()
+    this.state = {
+      'isLoading':true
+    }
+  }
+  componentDidMount() {
+    setTimeout(() => this.setState({ isLoading: false }), 2000);
+}
+
+  render(){
+    return(
+      this.state.isLoading ? <LoadingScreen></LoadingScreen> : <Home></Home>
+    )
+  }
+}
+
+const LoadingScreen =() => {
+  return(
+    <div className='loading-container whitebg'>
+    <div className="container whitebg">
+    <div className="row">
+        <div className="col-lg-6 loading-margin-top-img">
+        <img src={iss_logo_big} className='loading-logo load-img'></img>
+        </div>
+        <div className="col-lg-6 loading-margin-top-text">
+        <div className='load-text'>
+        <p className='loading-text-font'><b>Consumex Productions Presentes</b></p>
+      <h2 className='loading-text-font'><b>Information Security Series & Cyber Sercurity Workshop</b></h2>
+      </div>
+        </div>
+    </div>
+    <LoadingBar type='bars' color='#000000' className='d-flex mx-auto'></LoadingBar>
+  </div>
+  </div>
+  )
+}
+
+const Home = () => {
   return (
     <div className='container'>
     <div>
@@ -137,13 +184,12 @@ const Home = () =>{
   );
 }
 
-export default App;
 
 const NavBar = ({iss, bars}) =>{
     return <nav className="navbar navbar-expand-xl">
     <ul className="navbar-nav">
       <li className="nav-item">
-        <img src={iss} alt='iss_logo' className='img-fluid logo'></img>
+        <a href="/"><img src={iss} alt='iss_logo' className='img-fluid logo'></img></a>
       </li>
       </ul>
       <ul className="navbar-nav ml-auto">
@@ -166,7 +212,7 @@ const LandingText = () => {
 const LogoAnimation = () => {
   return <div className='parent'>
   <img src={circle} className='image1' alt='circle'></img>
-  <img src={layer4} className = 'image2' alt = 'layer4'></img>
+  {/* <img src={layer4} className = 'image2' alt = 'layer4'></img> */}
   <img src={consumex} className = 'image3' alt = 'consumex'></img>
   </div>
 }
@@ -185,7 +231,7 @@ const Menu = () => {
 <li ><span className='main-text-font cool-link'><a href="/workshop" className='small pl-5'>Workshop</a></span></li>
 <li ><span className='main-text-font cool-link'><a href="/awards" className='small pl-5'>Awards</a></span></li>
 <li ><span className='main-text-font cool-link'><a href="/about" className='small pl-5'>About</a></span></li>
-<li ><span className='main-text-font cool-link'><a href="#" className='small pl-5'>Register</a></span></li>
+<li ><span className='main-text-font cool-link'><a href="/register" className='small pl-5'>Register</a></span></li>
 <li ><span className='main-text-font cool-link'><a href="/contact" className='small pl-5'>Contact</a></span></li> 
  </ol>
  </div>
@@ -199,7 +245,7 @@ const Series = () => {
   return <div className='full-div darkbg'>
   <div className='container'>
   <NavBar iss={iss_logo} bars={bars}></NavBar>
-  <DemoCarousel></DemoCarousel>
+  <SeriesContent></SeriesContent>
   </div>
   <Menu></Menu>
   </div>
@@ -245,10 +291,10 @@ const GearAnimation = () => {
   </div>
 }
 
-class DemoCarousel extends Component {
+class SeriesContent extends Component {
   render() {
       return (
-        <div className='container mt-5'>
+        <div className='container'>
              <div  data-aos='slide-up' data-aos-delay="0" data-aos-duration="1000" data-aos-easing="ease-in-out" className='center-screen'>
         <img src={series1} className='mb-5' alt='series1'></img>
         <h1 className='color-white main-text-font'>Concluded</h1>
@@ -300,6 +346,11 @@ Nominate for the 4th edition summit awards here.</p>
 }
 
 const AwardsAnimation = () => {
+  return (
+    <div className='cotainer ml-5'>
+    <img src={award_image} className='awards-image img-jump' alt='awards'></img>
+    </div>
+  )
 
 }
 const Awards = () => {
@@ -314,7 +365,7 @@ const Awards = () => {
       <AwardsText></AwardsText>
       </div>
       <div className="col-lg-6">
-      <h1>Hello</h1>
+<AwardsAnimation></AwardsAnimation>
       </div>
   </div>
 </div>
@@ -322,3 +373,141 @@ const Awards = () => {
     </div>
   )
 }
+
+const initialState = {
+  'optionsRadios':'',
+  'name':'',
+  'designation': '',
+  'company':'',
+  'phone':'',
+  'mail':'',
+  'comment':'',
+  'showMessage':false
+}
+
+class Register extends React.Component {
+  constructor (){
+    super()
+    this.state = initialState
+    this.handleChange = this.handleChange.bind(this)
+    this.sendMail = this.sendMail.bind(this)
+
+  }
+  handleChange(event){
+    const value = event.target.type === 'checkbox' ? event.target.checked : event.target.value;
+    const name = event.target.name
+    this.setState({[name]: value})
+  }
+
+  sendMail(event){
+    event.preventDefault()
+    fetch('http://127.0.0.1:5000/mail', {
+      method: "POST", // *GET, POST, PUT, DELETE, etc.
+      headers: {
+          "Content-Type": "application/json; charset=utf-8",
+          // "Content-Type": "application/x-www-form-urlencoded",
+      },
+      body: JSON.stringify(this.state), // body data type must match "Content-Type" header
+  }).then((response)=> {
+    this.setState(initialState)
+  })
+  }
+  render(){
+  return(
+    <div className='register-container whitebg pb-5'>
+      <div className='container'>
+      <div>
+      <NavBar iss={iss_black} bars={bars_black}></NavBar>
+      </div>
+      <div className="container-fluid top">
+    <div className="row">
+        <div className="col-lg-6">
+        <div>
+    <form method="post" action="">
+    <div className="form-group">
+      <label htmlFor="InputName" className='explain-text'><b>YOUR NAME</b></label>
+      <input type="text" className="form-control input-custom" id="InputName" name="name"  value={this.state.name} onChange={this.handleChange}></input>
+    </div>
+    <div className="form-group">
+      <label htmlFor="InputDesgination" className='explain-text'><b>DESIGNATION</b></label>
+      <input type="text" className="form-control input-custom" id="InputDesgination" name="designation" value={this.state.designation} onChange={this.handleChange}/>
+    </div>
+    <div className="form-group">
+      <label htmlFor="InputCompanyName" className='explain-text'><b>COMPANY NAME</b></label>
+      <input type="text" className="form-control input-custom" id="InputCompanyName" name="company" value={this.state.company} onChange={this.handleChange} />
+    </div>
+    <div className="form-group">
+      <label htmlFor="InputPhone" className='explain-text'><b>PHONE</b></label>
+      <input type="tel" className="form-control input-custom" id="InputPhone" name="phone" value={this.state.phone} onChange={this.handleChange}/>
+    </div>
+    <div className="form-group">
+      <label htmlFor="InputEmail1" className='explain-text'><b>EMAIL</b></label>
+      <input type="email" className="form-control input-custom" id="InputEmail1" name="mail" value={this.state.mail} onChange={this.handleChange}/>
+      <small id="emailHelp" className="form-text text-muted">Well never share your email with anyone else.</small>
+    </div>
+  <fieldset className="form-group">
+    <label><span className='explain-text'><b>I WANT TO</b></span></label>
+    <div className="form-check">
+      <label className="form-check-label">
+        <input type="radio" className="form-check-input" name="optionsRadio" id="optionsRadios1" value="option1" onChange={this.handleChange}/>
+        <span className='explain-text'><b>to attend as a delegate for the conference</b></span>
+      </label>
+    </div>
+    <div className="form-check">
+    <label className="form-check-label">
+        <input type="radio" className="form-check-input" name="optionsRadios" id="optionsRadios2" value="option2" onChange={this.handleChange}/>
+        <span className='explain-text'><b>to attend the WORKSHOP after the conference</b></span>
+      </label>
+    </div>
+    <div className="form-check">
+    <label className="form-check-label">
+        <input type="radio" className="form-check-input" name="optionsRadios" id="optionsRadios3" value="option3"  onChange={this.handleChange}/>
+        <span className='explain-text'><b>sponsorship details</b></span>
+      </label>
+    </div>
+    <div className="form-check">
+    <label className="form-check-label">
+        <input type="radio" className="form-check-input" name="optionsRadios" id="optionsRadios5" value="option4"  onChange={this.handleChange}/>
+        <span className='explain-text'><b>to speak at the event</b></span>
+      </label>
+    </div>
+    <div className="form-check">
+    <label className="form-check-label">
+        <input type="radio" className="form-check-input" name="optionsRadios" id="optionsRadios5" value="option5"  onChange={this.handleChange}/>
+        <span className='explain-text'><b>to be a media partner</b></span>
+      </label>
+    </div>
+    <div className="form-check">
+    <label className="form-check-label">
+        <input type="radio" className="form-check-input" name="optionsRadios" id="optionsRadios6" value="option6"  onChange={this.handleChange}/>
+        <span className='explain-text'><b>sponsorship details</b></span>
+      </label>
+    </div>
+    <div className="form-check">
+    <label className="form-check-label">
+        <input type="radio" className="form-check-input" name="optionsRadios" id="optionsRadios7" value="option7"  onChange={this.handleChange}/>
+        <span className='explain-text'><b>other details</b></span>
+      </label>
+    </div>
+    </fieldset>
+    <div className="form-group">
+      <label htmlFor="InputComment" className='explain-text'><b>COMMENTS</b></label>
+      <textarea className="form-control input-custom" rows="5" id="commenttext" name='comment' onChange={this.handleChange} value={this.state.comment}></textarea>
+    </div>
+  <button type="submit" className="btn btn-dark" onClick={this.sendMail}>Submit</button>
+    </form>
+    </div>
+        </div>
+        <div className="col-lg-6 explain-text mt-auto ml-auto">
+        <p><b>For award nominations, please click here.</b></p><br></br>
+        <p><b>For delegate – conference- questionnaires, please click here.</b></p><br></br>
+        </div>
+    </div>
+  </div>
+  <Menu></Menu>
+      </div>
+      </div>
+    );
+}}
+
+export default App;
