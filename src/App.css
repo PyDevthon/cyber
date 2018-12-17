@@ -244,6 +244,7 @@ a:hover
   height: 90vh;
 }
 .rotate-image{
+  width: 30%;
   animation: animation-top-spin infinite 10s linear;
 }
 
@@ -252,7 +253,7 @@ a:hover
   margin: 8% 0;
 }
 .top{
-  margin-top: 10%;
+  margin-top: 15%;
 }
 .bounce {
   -webkit-animation: bounce 2s infinite;

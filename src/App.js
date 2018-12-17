@@ -10,14 +10,15 @@ import bars from './bars.png';
 import iss_black from './iss_logo_black.png';
 import bars_black from './bars_black.png';
 import {mapOptions} from './constants.js';
-import series1 from './series_1.png';
-import series2 from './series_2.png';
-import series3 from './series_3.png';
+import series1 from './new_circle1.png';
+import series2 from './new_circle2.png';
+import series3 from './new_circle3.png';
 import gear2 from './medium_gear.png';
 import gear3 from './large_gear.png';
 import award_image from './awards.png';
 import iss_logo_big from './iss_logo_big.png';
-import ReactLoading from 'react-loading';
+import PacmanLoader from 'react-spinners/PacmanLoader';
+import { SocialIcon } from 'react-social-icons';
 import AOS from 'aos';
 
 AOS.init()
@@ -86,20 +87,11 @@ const Contact = () =>{
   <div class="container">
   <div class="row ml-5 mt-5">
     <div class="col-sm">
-      <p className='explain-text'>
-      <b>Ground Floor, Sanjana Arcade, 
-        Near Mini Vidhana Soudha,
-        Karkala – 574 104.</b>
-      </p>
-      <p className='explain-text'>+91 961 138 3802
-enquiry@consumex-productions.com</p>
-    </div>
-    <div class="col-sm">
-    <p className='explain-text'>
+    <h4 className='explain-text'>
       <b>#30, Bella vista,
-Apoorva Layout, Nagarabhavi,
+Apoorva Layout, Nagarabhavi,<br></br>
 Bangalore – 560 072.</b>
-      </p>
+      </h4>
       <p className='explain-text'>+91 761 925 6751
 enquiry@consumex-productions.com</p>
     </div>
@@ -109,6 +101,9 @@ enquiry@consumex-productions.com</p>
 SECURITY STORY WITH 
 YOUR FRIENDS</b>
       </p>
+      <span className="m-3"><SocialIcon url="http://twitter.com/jaketrent" /></span>
+      <span className="m-3"><SocialIcon url="http://facebook.com/jaketrent" /></span>
+      <span className="m-3"><SocialIcon url="http://linkedin.com/jaketrent" /></span>
     </div>
   </div>
 </div>
@@ -120,8 +115,10 @@ YOUR FRIENDS</b>
   </div>
 }
 
-const LoadingBar = ({ type, color, className }) => (
-  <ReactLoading type={type} color={color} height={50} width={50} className={className} />
+const LoadingBar = ({ color, className }) => (
+  <div className = "d-flex justify-content-center mt-5">
+  <PacmanLoader color={color}  sizeUnit={"px"}  size={50}/>
+  </div>
 );
 
 class HomeLoader extends React.Component{
@@ -157,7 +154,7 @@ const LoadingScreen =() => {
       </div>
         </div>
     </div>
-    <LoadingBar type='bars' color='#000000' className='d-flex mx-auto'></LoadingBar>
+    <LoadingBar color='#000000'></LoadingBar>
   </div>
   </div>
   )
@@ -296,7 +293,7 @@ class SeriesContent extends Component {
       return (
         <div className='container'>
              <div  data-aos='slide-up' data-aos-delay="0" data-aos-duration="1000" data-aos-easing="ease-in-out" className='center-screen'>
-        <img src={series1} className='mb-5' alt='series1'></img>
+        <img src={series1} className='mb-5 rotate-image' alt='series1'></img>
         <h1 className='color-white main-text-font'>Concluded</h1>
       <p className='color-white explain-text-font'>Recent - Information Security Summit - 3rd edition & Indian CISO awards, New Delhi, India – 13th April 2018,<br></br> held under the patronage of Ministry of Electronics and Information Technology (MeitY)<br></br><br></br>
 <b>Request post event report.</b></p>
@@ -305,7 +302,7 @@ class SeriesContent extends Component {
 </div>
     </div>
     <div id = "second_div" className="center-screen" data-aos='slide-up' data-aos-delay="30" data-aos-duration="1500" data-aos-easing="ease-in-out">
-        <img src={series2} alt='series1' className='mb-5'></img>
+        <img src={series2} alt='series1' className='mb-5 rotate-image'></img>
         <h1 className='color-white main-text-font'>Upcoming</h1>
       <p className='color-white explain-text-font'>Information Security Summit & Indian CISO Awards – 5th edition
 October, Hyderabad<br></br>
@@ -323,7 +320,7 @@ November, Colombo, Sri Lanka.<br></br>
   <span className="fa fa-arrow-down fa-2x color-white"></span>
 </div>
     <div id="third_div"className="center-screen" data-aos='slide-up' data-aos-delay="30" data-aos-duration="1500" data-aos-easing="ease-in-out">
-        <img src={series3} alt='series1' className='mb-5'></img>
+        <img src={series3} alt='series1' className='mb-5 rotate-image'></img>
         <h1 className='color-white main-text-font'>Workshop</h1>
       <p className='color-white explain-text-font'>NIST Cyber Security Framework – Workshop – Hyderabad - October.<br></br>
 <b>View details</b>
@@ -419,7 +416,7 @@ class Register extends React.Component {
       <div>
       <NavBar iss={iss_black} bars={bars_black}></NavBar>
       </div>
-      <div className="container-fluid top">
+      <div className="container-fluid mt-5">
     <div className="row">
         <div className="col-lg-6">
         <div>
@@ -494,13 +491,13 @@ class Register extends React.Component {
       <label htmlFor="InputComment" className='explain-text'><b>COMMENTS</b></label>
       <textarea className="form-control input-custom" rows="5" id="commenttext" name='comment' onChange={this.handleChange} value={this.state.comment}></textarea>
     </div>
-  <button type="submit" className="btn btn-dark" onClick={this.sendMail}>Submit</button>
+  <button type="submit" className="btn btn-dark mb-5" onClick={this.sendMail}>Submit</button>
     </form>
-    </div>
-        </div>
-        <div className="col-lg-6 explain-text mt-auto ml-auto">
+    <span className='explain-text'>
         <p><b>For award nominations, please click here.</b></p><br></br>
         <p><b>For delegate – conference- questionnaires, please click here.</b></p><br></br>
+        </span>
+    </div>
         </div>
     </div>
   </div>
