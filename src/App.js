@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import GoogleMapReact from 'google-map-react';
 import './App.css';
 import iss_logo from './iss_logo.png';
-import circle from './circle.png';
 import layer4 from './layer_4.png';
 import consumex from './consumex.png';
 import bars from './bars.png';
@@ -19,6 +18,7 @@ import award_image from './awards.png';
 import iss_logo_big from './iss_logo_big.png';
 import PacmanLoader from 'react-spinners/PacmanLoader';
 import { SocialIcon } from 'react-social-icons';
+import CountUp from 'react-countup';
 import AOS from 'aos';
 
 AOS.init()
@@ -66,12 +66,30 @@ class ConsumexMap extends Component {
 }
 
 const AboutUs = () => {
-  return <div className='full-div blackbg'>
+  return <div className='full-div whitebg'>
   <div class='container'>
-    <NavBar iss={iss_logo} bars={bars}></NavBar>
-    <div class='container top'>
-    <h1 className='main-text-font color-white'>About Consumex.</h1>
-    <p className='explain-text color-grey'>As a professional conference organizer, Consumex Productions business is to convey high-value information that is undoubtedly relevant for the end-users. Our platform offers real-world solutions to critical business challenges and our subjects have been widely researched and logically programmed.<br></br><br></br>
+    <NavBar iss={iss_black} bars={bars_black}></NavBar>
+    <div class='container mt-5'>
+    <div className='row mb-5'>
+    <div className='col'>
+    <CountUp end={5} suffix='+' className='font-color-white display-2 explain-text' duration={3}/>
+    <div className='font-color-white explain-text font-weight-bold about-text'>CYBER SECURITY EVENTS</div>
+    </div>
+    <div className='col'>
+    <CountUp end={10}  suffix='+' className='font-color-white display-2 explain-text' duration={3}/>
+    <div className='font-color-white explain-text font-weight-bold about-text'>WORKSHOPS</div>
+    </div>
+    <div className='col'>
+    <CountUp end={1500} suffix='+' className='font-color-white display-2 explain-text' duration={3}/>
+    <div className='font-color-white explain-text font-weight-bold about-text'>ATTENDIES</div>
+    </div>
+    <div className='col'>
+    <CountUp end={10} suffix='+' className='font-color-white display-2 explain-text' duration={3}/>
+    <div className='font-color-white explain-text font-weight-bold about-text'>COUNTRIES</div>
+    </div>
+    </div>
+    <h1 className='main-text-font'>About Consumex.</h1>
+    <p className='explain-text'>As a professional conference organizer, Consumex Productions business is to convey high-value information that is undoubtedly relevant for the end-users. Our platform offers real-world solutions to critical business challenges and our subjects have been widely researched and logically programmed.<br></br><br></br>
 Our Speakers and contributors are top-level chiefs and pioneers in their fields, who wish to take part in significant discussion with representatives on vital industry issues and trends. Our insight banks contain best practice case studies, extensive technical briefings and data rich recordings; empowering broad learning and benchmarking opportunities.<br></br><br></br>
 
 Consumex Productions aims to be the most dynamic and professional corporate event and conference organisers, showing innovation in approach to business by consistently delivering exceptional standards across all areas of our service. By doing so, we provide reliability to our customers and encouraging our employees to realise both personal and professional objectives.</p></div>
@@ -208,8 +226,8 @@ const LandingText = () => {
 
 const LogoAnimation = () => {
   return <div className='parent'>
-  <img src={circle} className='image1' alt='circle'></img>
-  {/* <img src={layer4} className = 'image2' alt = 'layer4'></img> */}
+  {/* <img src={circle} className='image1' alt='circle'></img> */}
+  <img src={layer4} className = 'image2' alt = 'layer4'></img>
   <img src={consumex} className = 'image3' alt = 'consumex'></img>
   </div>
 }
@@ -292,16 +310,19 @@ class SeriesContent extends Component {
   render() {
       return (
         <div className='container'>
-             <div  data-aos='slide-up' data-aos-delay="0" data-aos-duration="1000" data-aos-easing="ease-in-out" className='center-screen'>
+             <div  className='center-screen' data-aos='slide-up'  data-aos-duration="1000">
         <img src={series1} className='mb-5 rotate-image' alt='series1'></img>
         <h1 className='color-white main-text-font'>Concluded</h1>
       <p className='color-white explain-text-font'>Recent - Information Security Summit - 3rd edition & Indian CISO awards, New Delhi, India – 13th April 2018,<br></br> held under the patronage of Ministry of Electronics and Information Technology (MeitY)<br></br><br></br>
 <b>Request post event report.</b></p>
-        <div class="arrow bounce">
-  <span className="fa fa-arrow-down fa-2x color-white"></span>
+<div class="d-flex justify-content-center mb-5">
+  <div class="chevron"></div>
+  <div class="chevron"></div>
+  <div class="chevron"></div>
+  <span class="text ml-1">Scroll down</span>
 </div>
     </div>
-    <div id = "second_div" className="center-screen" data-aos='slide-up' data-aos-delay="30" data-aos-duration="1500" data-aos-easing="ease-in-out">
+    <div id = "second_div" className="center-screen"  data-aos='slide-up'  data-aos-duration="1000">
         <img src={series2} alt='series1' className='mb-5 rotate-image'></img>
         <h1 className='color-white main-text-font'>Upcoming</h1>
       <p className='color-white explain-text-font'>Information Security Summit & Indian CISO Awards – 5th edition
@@ -315,11 +336,14 @@ October, Bangalore.<br></br>
 CISO – CIO Summit & Awards – 7th edition
 November, Colombo, Sri Lanka.<br></br>
 <b>View details</b> </p>
-        </div>
-        <div class="arrow bounce">
-  <span className="fa fa-arrow-down fa-2x color-white"></span>
+<div class="d-flex justify-content-center mb-5">
+  <div class="chevron"></div>
+  <div class="chevron"></div>
+  <div class="chevron"></div>
+  <span class="text ml-1">Scroll down</span>
 </div>
-    <div id="third_div"className="center-screen" data-aos='slide-up' data-aos-delay="30" data-aos-duration="1500" data-aos-easing="ease-in-out">
+        </div>
+    <div id="third_div"className="center-screen"  data-aos='slide-up'  data-aos-duration="1000">
         <img src={series3} alt='series1' className='mb-5 rotate-image'></img>
         <h1 className='color-white main-text-font'>Workshop</h1>
       <p className='color-white explain-text-font'>NIST Cyber Security Framework – Workshop – Hyderabad - October.<br></br>

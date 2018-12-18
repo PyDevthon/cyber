@@ -6,6 +6,7 @@
     "aos": "^2.3.4",
     "google-map-react": "^1.1.1",
     "react": "^16.6.3",
+    "react-countup": "^4.0.0",
     "react-dom": "^16.6.3",
     "react-google-maps": "^9.4.5",
     "react-loading": "^2.0.3",
