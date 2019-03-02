@@ -34,13 +34,16 @@ import {mapOptions, initialState, loadingTextheading, loadingTextpara, landingTe
   workshopPara1, awardsMainpara1, aboutManinpara1, aboutManinpara2, aboutManinpara3
 } from './constants.js';
 
+const Cube = () => {
+  return <canvas id ='canvasOne' width="600" height="520"></canvas>
+}
 
 // Router 
 class App extends Component {
   render() {
-    return ( <Router>
+    return  <Router>
       <div>
-        <Route exact path="/" component={HomeLoader} />
+        <Route exact path="/" component={Home} />
         <Route exact path="/contact" component={Contact} />
         <Route exact path="/about" component={AboutUs} />
         <Route exact path="/series" component={Series} />
@@ -49,9 +52,10 @@ class App extends Component {
         <Route exact path="/register" component = {Register}/>
       </div>
     </Router>
-    )
+    
   }
 }
+
 
 // Home Screen with StartUp Page
 class HomeLoader extends React.Component{
@@ -61,13 +65,9 @@ class HomeLoader extends React.Component{
       'isLoading':true
     }
   }
-  componentDidMount() {
-    setTimeout(() => this.setState({ isLoading: false }), 2000);
-}
-
   render(){
     return(
-      this.state.isLoading ? <LoadingScreen></LoadingScreen> : <Home></Home>
+      <Home></Home>
     )
   }
 }
@@ -126,7 +126,7 @@ const Menu = () => {
  <ol className='menu-list-counter'>
  <li><span className='main-text-font cool-link'><a href="/" className='small pl-5'>Home</a></span></li>
  <li><span className='main-text-font cool-link'><a href="/series" className='small pl-5'>Series</a></span></li>
-<li ><span className='main-text-font cool-link'><a href="/speaker" className='small pl-5'>Speakers</a></span></li>
+ <li ><span className='main-text-font cool-link'><a href="/speaker" className='small pl-5'>Speakers</a></span></li>
 <li ><span className='main-text-font cool-link'><a href="/workshop" className='small pl-5'>Workshop</a></span></li>
 <li ><span className='main-text-font cool-link'><a href="/awards" className='small pl-5'>Awards</a></span></li>
 <li ><span className='main-text-font cool-link'><a href="/about" className='small pl-5'>About</a></span></li>
@@ -146,13 +146,13 @@ const Home = () => {
     <div>
     <NavBar iss={iss_logo_white} bars={bars_white}></NavBar>
     </div>
-    <div className="container-fluid top">
+    <div className="container-fluid top" style = {{"marginTop": "120px"}}>
   <div className="row">
       <div className="col-lg-6">
       <LandingText></LandingText>
       </div>
-      <div className="col-lg-6">
-      <LogoAnimation></LogoAnimation>
+      <div className="col-lg-6" style = {{"marginTop": "-70px"}}>
+      <Cube></Cube>
       </div>
   </div>
 </div>
@@ -240,12 +240,12 @@ const SeriesContent =() => {
     </div>
   </div>
   <div>
-  <a className="carousel-control-prev" href="#demo" data-slide="prev">
+  {/* <a className="carousel-control-prev" href="#demo" data-slide="prev">
     <span className="carousel-control-prev-icon"></span>
   </a>
   <a className="carousel-control-next" href="#demo" data-slide="next">
     <span className="carousel-control-next-icon"></span>
-  </a>
+  </a> */}
 </div>
 </div>
   )
@@ -332,28 +332,28 @@ const AboutUs = () => {
   <div class='container'>
     <NavBar iss={iss_logo_black} bars={bars_black}></NavBar>
     <div class='container mt-5'>
-    <h1 className='main-text-font'>About Consumex.</h1>
-    <div className='row mb-5'>
-    <div className='col'>
-    <CountUp end={5} suffix='+' className='font-color-white display-2 explain-text' duration={3}/>
-    <div className='font-color-white explain-text font-weight-bold about-text'>CYBER SECURITY EVENTS</div>
-    </div>
-    <div className='col'>
-    <CountUp end={10}  suffix='+' className='font-color-white display-2 explain-text' duration={3}/>
-    <div className='font-color-white explain-text font-weight-bold about-text'>WORKSHOPS</div>
-    </div>
-    <div className='col'>
-    <CountUp end={1500} suffix='+' className='font-color-white display-2 explain-text' duration={3}/>
-    <div className='font-color-white explain-text font-weight-bold about-text'>ATTENDIES</div>
-    </div>
-    <div className='col'>
-    <CountUp end={10} suffix='+' className='font-color-white display-2 explain-text' duration={3}/>
-    <div className='font-color-white explain-text font-weight-bold about-text'>COUNTRIES</div>
-    </div>
-    </div>
+    <h1 className='main-text-font' style={{"marginBottom":"30px"}}>About Consumex.</h1>
     <p className='explain-text'>{aboutManinpara1}<br></br><br></br>
 {aboutManinpara2}<br></br><br></br>
 {aboutManinpara3}</p></div>
+ <div className='row' style={{"marginTop":"50px"}}>
+    <div className='col'>
+    <CountUp end={5} suffix='+' className='font-color-white display-4 explain-text font-weight-bold d-flex justify-content-center'  duration={3}/>
+    <div className='font-color-white explain-text font-weight-bold about-text d-flex justify-content-center' style ={{"marginTop":"5px"}}><small><strong>CYBER SECURITY EVENTS</strong></small></div>
+    </div>
+    <div className='col'>
+    <CountUp end={10}  suffix='+' className='font-color-white display-4 explain-text font-weight-bold d-flex justify-content-center' duration={3}/>
+    <div className='font-color-white explain-text font-weight-bold about-text d-flex justify-content-center ' style ={{"marginTop":"5px"}}><small><strong>WORKSHOPS</strong></small></div>
+    </div>
+    <div className='col'>
+    <CountUp end={1500} suffix='+' className='font-color-white display-4 explain-text font-weight-bold d-flex justify-content-center' duration={3}/>
+    <div className='font-color-white explain-text font-weight-bold about-text d-flex justify-content-center' style ={{"marginTop":"5px"}}><small><strong>ATTENDIES</strong></small></div>
+    </div>
+    <div className='col'>
+    <CountUp end={10} suffix='+' className='font-color-white display-4 explain-text font-weight-bold d-flex justify-content-center' duration={3}/>
+    <div className='font-color-white explain-text font-weight-bold about-text d-flex justify-content-center' style ={{"marginTop":"5px"}}><small><strong>COUNTRIES</strong></small></div>
+    </div>
+    </div>
     </div>
     <Menu></Menu>
   </div>
@@ -496,7 +496,7 @@ const Contact = () =>{
 Apoorva Layout, Nagarabhavi,<br></br>
 Bangalore – 560 072.</b>
       </h4>
-      <p className='explain-text'>+91 761 925 6751
+      <p className='explain-text'>
 enquiry@consumex-productions.com</p>
     </div>
     <div class="col-sm">
@@ -505,7 +505,7 @@ enquiry@consumex-productions.com</p>
 SECURITY STORY WITH 
 YOUR FRIENDS</b>
       </p>
-      <span className="m-3"><SocialIcon url="http://twitter.com/jaketrent" /></span>
+      <span className="m-3"><SocialIcon network="twitter" bgColor="#ff5a01"/></span>
       <span className="m-3"><SocialIcon url="http://facebook.com/jaketrent" /></span>
       <span className="m-3"><SocialIcon url="http://linkedin.com/jaketrent" /></span>
     </div>

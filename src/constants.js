@@ -201,15 +201,15 @@ export const initialState = {
 export const loadingTextheading = "Consumex Productions Presentes"
 export const loadingTextpara = "Information Security Series & Cyber Sercurity Workshop"
 
-export const landingTextheading = "4th edition Information Security Summit."
-export const landingTextpara = `The 4th edition of the Information  Security Symposium under the Consumex Cyber Security Series will take place in April at the ...
+export const landingTextheading = "4th edition Information Security Summit & Indian CISO Awards."
+export const landingTextpara = `The 4th edition of the Information  Security Symposium under the Consumex Cyber Security Series will take place in May from 30th to 31st at JW Mariott, Mumbai.
   This private gathering is hosting Information and Information Security Heads of various organizations across India for a 2 day conference discussing the latest trends,
   experiences, insights and expectations in the realm of cyber security.`
 
 
 export const seriesMainHeader = "Information Security Series & Cyber Security Workshop."
-export const seriesMainpara1 = `Aollowing the successful development and execution of our cyber security training and conference-awards series,
-                          Consumex Productions is now looking to expand its footprint by taking its conference series to various cities both in India and abroad`
+export const seriesMainpara1 = `Allowing the successful development and execution of our cyber security training and conference-awards series,
+                          Consumex Productions is now looking to expand its footprint by taking its conference series to various cities both in India and abroad.`
 export const seriesMainpara2 = `Consumex’s cyber security series is the best way to keep yourself updated, on the latest developments on the subject through 
                                 high profile panel discussions and expert keynotes. A 2 day workshop on specific topics lead by industry leaders also gives you the opportunity to avail in-depth knowledge on
                                   the subject through personalized class room type trainings, activities and course materials given at the venue.`
@@ -217,24 +217,24 @@ export const seriesMainpara2 = `Consumex’s cyber security series is the best w
 export const seriesConcludedpara1 = `Recent - Information Security Summit - 3rd edition & Indian CISO awards, New Delhi, India – 13th April 2018,`
 export const seriesConcludedpara2 = `held under the patronage of Ministry of Electronics and Information Technology (MeitY)`
 
-export const seriesUpcomingpara1 = `Information Security Summit & Indian CISO Awards – 5th editionOctober, Hyderabad`
+export const seriesUpcomingpara1 = `Information Security Summit & Indian CISO Awards – 5th edition October, Hyderabad.`
 export const seriesUpcomingpara2 = `Information Security Summit & Indian CISO Awards – 6th edition October, Bangalore.` 
 export const seriesUpcomingpara3 = `CISO – CIO Summit & Awards – 7th edition November, Colombo, Sri Lanka.`
 
 export const  seiresWorkshoppara1 = `NIST Cyber Security Framework – Workshop – Hyderabad - October.`
 export const  seiresWorkshoppara2 = `Cyber Security Dashboard – Workshop - Bangalore - October.`
 
-export const workshopPara1 = `A day workshop on NIST Cyber Security Framework is being presented at the same venue on the ... and the ... lead by Mr Balaji Venkateshwar as the workshop leader. 
-    This workshop offers 2 day interactive session by a leading Cyber Security Researcher, course materials and a certificate of attendance with follow up assistance after the course.`
+export const workshopPara1 = `A day workshop on NIST Cyber Security Framework is being presented at the same venue on the 1st of June lead by Mr Balaji Venkateshwar as the workshop leader. 
+    This workshop offers a one day interactive session by a leading Cyber Security Researcher, course materials and a certificate of attendance with follow up assistance after the course.`
 
 export const awardsMainpara1 = `The Indian CISO Awards 2019 will honour individuals who have significantly contributed to the overall development of Information Security programs within their organizations. 
 We believe this recognition will further boost their efforts in the future to enable digital transformation, and motivate many to take note and follow suit.
-Nominate for the 4th edition summit awards here`
+Nominate for the 4th edition summit awards here.`
 
 export const  aboutManinpara1 = `As a professional conference organizer, Consumex Productions business is to convey high-value information that is undoubtedly relevant for the end-users. 
-                            Our platform offers real-world solutions to critical business challenges and our subjects have been widely researched and logically programmed`
-export const  aboutManinpara2 =`Our Speakers and contributors are top-level chiefs and pioneers in their fields, who wish to take part in significant discussion with representatives on vital industry issues and trends. 
+                            Our platform offers real-world solutions to critical business challenges and our subjects have been widely researched and logically programmed.`
+export const  aboutManinpara2 =`Our speakers and contributors are top-level chiefs and pioneers in their fields, who wish to take part in significant discussion with representatives on vital industry issues and trends. 
                             Our insight banks contain best practice case studies, extensive technical briefings and data rich recordings; empowering broad learning and benchmarking opportunities.`
 export const  aboutManinpara3 = `Consumex Productions aims to be the most dynamic and professional corporate event and conference organisers, 
                        showing innovation in approach to business by consistently delivering exceptional standards across all areas of our service.
-                         By doing so, we provide reliability to our customers and encouraging our employees to realise both personal and professional objectives`
+                         By doing so, we provide reliability to our customers and encouraging our employees to realise both personal and professional objectives.`
