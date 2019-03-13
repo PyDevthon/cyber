@@ -17,6 +17,16 @@ import bars_white from './bars_white.png';
 import bars_black from './bars_black.png';
 import logo_circle from './logo_circle.png';
 import powered_by from './powered_by.png';
+import s_lopa from './lopa.png';
+import s_hitesh from './hitesh.png';
+import s_jaspreet from './jaspreet.png';
+import s_prateek from './prateek.png';
+import s_rakshith from './rakshith.png';
+import s_ranjan from './ranjan.png';
+import s_ratan from './ratan.png';
+import s_souurab from './souurab.png';
+import s_subhajit from './subhajit.png';
+import s_vikas from './vikas.png';
 
 import series_circle_1 from './series_circle_1.png';
 import series_circle_2 from './series_circle_2.png';
@@ -50,6 +60,7 @@ class App extends Component {
         <Route exact path="/workshop" component={Workshop} />
         <Route exact path="/awards" component = {Awards}/>
         <Route exact path="/register" component = {Register}/>
+        <Route exact path="/speaker" component = {Speakers}/>
       </div>
     </Router>
     
@@ -248,6 +259,119 @@ const SeriesContent =() => {
   </a> */}
 </div>
 </div>
+  )
+}
+const Speakers = () => {
+  return (
+  <div className='container'>
+  <div>
+  <NavBar iss={iss_logo_white} bars={bars_white}></NavBar>
+  </div>
+  <div id="demo" className="carousel slide " data-ride="carousel" data-interval = {false}>
+  <ul className="carousel-indicators custom-carousel">
+    <li data-target="#demo" data-slide-to="0" className="active"></li>
+    <li data-target="#demo" data-slide-to="1"></li>
+  </ul>
+  <div className="carousel-inner">
+  <div className="carousel-item active">
+  <div class="card-deck mt-5">
+  <div class="card darkbg">
+    <div class="card-body text-center text-white">
+    <img class="card-img-top" src={s_lopa} style = {{"width":"60%"}}alt="Card image"/>
+      <p class="font-weight-bold pt-2">Dr. Lopa Mudraa Basuu</p>
+      <small class="card-text"> Global Leader, Cyber Security Governance, Risk & Compliance Nissan Motor Corporation</small>
+    </div>
+  </div>
+  <div class="card darkbg">
+    <div class="card-body text-center text-white">
+    <img class="card-img-top" src={s_rakshith} style = {{"width":"60%"}}alt="Card image"/>
+      <p class="font-weight-bold pt-2">Rakshit Tandon</p>
+      <small class="card-text">Cyber security Expert & 
+TedX speaker</small>
+    </div>
+  </div>
+  <div class="card darkbg">
+    <div class="card-body text-center text-white">
+    <img class="card-img-top" src={s_subhajit} style = {{"width":"60%"}}alt="Card image"/>
+      <p class="font-weight-bold pt-2">Subhajit Deb</p>
+      <small class="card-text"> CISO, 
+Dr. Reddy’s Laboratory</small>
+    </div>
+  </div>
+  <div class="card darkbg">
+    <div class="card-body text-center text-white">
+    <img class="card-img-top" src={s_prateek} style = {{"width":"60%"}}alt="Card image"/>
+      <p class="font-weight-bold pt-2">Prateek Mishra</p>
+      <small class="card-text">CISO, 
+IDBI Federal Life Insurance</small>
+    </div>
+  </div>
+</div>
+<div class="card-deck mt-4">
+  <div class="card darkbg">
+    <div class="card-body text-center text-white">
+    <img class="card-img-top" src={s_jaspreet} style = {{"width":"60%"}}alt="Card image"/>
+      <p class="font-weight-bold pt-2">Jaspreet Singh</p>
+      <small class="card-text">Partner – Cyber Security | 
+Africa, India & Middle East (AIM) | 
+Advisory Services, Ernst & Young</small>
+    </div>
+  </div>
+  <div class="card darkbg">
+    <div class="card-body text-center text-white">
+    <img class="card-img-top" src={s_ratan} style = {{"width":"60%"}}alt="Card image"/>
+      <p class="font-weight-bold pt-2">Ratan Jyoti </p>
+      <small class="card-text">CISO,
+ Ujjivan Small Finance Bank</small>
+    </div>
+  </div>
+  <div class="card darkbg">
+    <div class="card-body text-center text-white">
+    <img class="card-img-top" src={s_ranjan} style = {{"width":"60%"}}alt="Card image"/>
+      <p class="font-weight-bold pt-2">Ranjan Revandkar</p>
+      <small class="card-text">Head Information Security, 
+Sun Pharma</small>
+    </div>
+  </div>
+  <div class="card darkbg">
+    <div class="card-body text-center text-white">
+    <img class="card-img-top" src={s_vikas} style = {{"width":"60%"}}alt="Card image"/>
+      <p class="font-weight-bold pt-2">Vikas Arora</p>
+      <small class="card-text">Vice President - Global Security and IT, 
+Toluna</small>
+    </div>
+  </div>
+</div>
+  </div>
+  <div className="carousel-item">
+  <div class="card-deck mt-5">
+  <div class="card darkbg">
+    <div class="card-body text-center text-white">
+    <img class="card-img-top" src={s_souurab} style = {{"width":"60%"}}alt="Card image"/>
+      <p class="font-weight-bold pt-2">Sourabh Tiwari</p>
+      <small class="card-text">CIO, 
+Meril Life</small>
+    </div>
+  </div>
+  <div class="card darkbg">
+    <div class="card-body text-center text-white">
+    <img class="card-img-top" src={s_hitesh} style = {{"width":"60%"}}alt="Card image"/>
+      <p class="font-weight-bold pt-2">Hitesh Mulani</p>
+      <small class="card-text">Group CISO, 
+Mahindra & Mahindra</small>
+    </div>
+  </div>
+  <div class="card darkbg">
+  </div>
+  <div class="card darkbg">
+  </div>
+
+  </div>
+  </div>
+  </div>
+  </div>
+  <Menu></Menu>
+  </div>
   )
 }
 
@@ -483,6 +607,7 @@ class Register extends React.Component {
       </div>
     );
 }}
+
 
 const Contact = () =>{
   return  <div className='full-div whitebg'>
