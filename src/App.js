@@ -499,7 +499,7 @@ class Register extends React.Component {
 
   sendMail(event){
     event.preventDefault()
-    fetch('http://127.0.0.1:5000/mail', {
+    fetch('https://consumex-mail.herokuapp.com/mail/', {
       method: "POST", // *GET, POST, PUT, DELETE, etc.
       headers: {
           "Content-Type": "application/json; charset=utf-8",
