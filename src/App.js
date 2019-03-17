@@ -6,7 +6,6 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 
 // Externam Modules 
 import GoogleMapReact from 'google-map-react';
-import ScaleLoader from 'react-spinners/ScaleLoader';
 import { SocialIcon } from 'react-social-icons';
 import CountUp from 'react-countup';
 
@@ -15,8 +14,6 @@ import iss_logo_white from './iss_logo_white.png';
 import iss_logo_black from './iss_logo_black.png';
 import bars_white from './bars_white.png';
 import bars_black from './bars_black.png';
-import logo_circle from './logo_circle.png';
-import powered_by from './powered_by.png';
 import s_lopa from './lopa.png';
 import s_hitesh from './hitesh.png';
 import s_jaspreet from './jaspreet.png';
@@ -36,10 +33,10 @@ import medium_gear from './medium_gear.png';
 import large_gear from './large_gear.png';
 
 import award_image from './awards.png';
-import iss_logo_start_up from './iss_logo_start_up.png';
+
 
 // constants
-import {mapOptions, initialState, loadingTextheading, loadingTextpara, landingTextheading, landingTextpara, seriesMainHeader, seriesMainpara1,
+import {mapOptions, initialState, landingTextheading, landingTextpara, seriesMainHeader, seriesMainpara1,
   seriesMainpara2, seriesConcludedpara1, seriesConcludedpara2, seriesUpcomingpara1, seriesUpcomingpara2, seriesUpcomingpara3, seiresWorkshoppara1, seiresWorkshoppara2,
   workshopPara1, awardsMainpara1, aboutManinpara1, aboutManinpara2, aboutManinpara3
 } from './constants.js';
@@ -68,47 +65,7 @@ class App extends Component {
 }
 
 
-// Home Screen with StartUp Page
-class HomeLoader extends React.Component{
-  constructor(){
-    super()
-    this.state = {
-      'isLoading':true
-    }
-  }
-  render(){
-    return(
-      <Home></Home>
-    )
-  }
-}
 
-const LoadingBar = ({ color, className }) => (
-  <div className = "d-flex justify-content-center mt-5 ml-5">
-  <ScaleLoader color={color}  sizeUnit={"px"}  size={50}/>
-  </div>
-);
-
-const LoadingScreen =() => {
-  return(
-    <div className='loading-container whitebg'>
-    <div className="container whitebg">
-    <div className="row">
-        <div className="col-lg-6 loading-margin-top-img">
-        <img src={iss_logo_start_up} className='loading-logo load-img' alt='loading-logo'></img>
-        </div>
-        <div className="col-lg-6 loading-margin-top-text">
-        <div className='load-text'>
-        <p className='loading-text-font'><b> {loadingTextheading} </b></p>
-      <h2 className='loading-text-font'><b>{loadingTextpara}</b></h2>
-      </div>
-        </div>
-    </div>
-    <LoadingBar color='#000000'></LoadingBar>
-  </div>
-  </div>
-  )
-}
 
 const NavBar = ({iss, bars}) =>{
   return <nav className="navbar navbar-expand-xl">
@@ -179,13 +136,6 @@ const LandingText = () => {
   </div>
 }
 
-const LogoAnimation = () => {
-  return <div className='parent'>
-  {/* <img src={circle} className='image1' alt='circle'></img> */}
-  <img src={logo_circle} className = 'image2' alt = 'layer4'></img>
-  <img src={powered_by} className = 'image3' alt = 'consumex'></img>
-  </div>
-}
 
 // Series
 const Series = () => {
@@ -221,7 +171,7 @@ const SeriesContent =() => {
         <img src={series_circle_1} className='mb-5 rotate-image' alt='series1'></img>
         <h1 className='color-white main-text-font'>Concluded</h1>
       <p className='color-white explain-text-font'>{seriesConcludedpara1}<br></br>{seriesConcludedpara2}<br></br><br></br>
-<b>Request post event report.</b></p>
+</p>
     </div>
     </div>
     <div className="carousel-item">
@@ -229,13 +179,10 @@ const SeriesContent =() => {
         <img src={series_circle_2} alt='series1' className='mb-5 rotate-image'></img>
         <h1 className='color-white main-text-font'>Upcoming</h1>
       <p className='color-white explain-text-font'>{seriesUpcomingpara1}<br></br>
-<b>View details</b>
-<br></br><br></br>
-{seriesUpcomingpara2}<br></br>
-<b>View details</b>
+      <a href='/register'><b>Know details</b></a>
 <br></br><br></br>
 {seriesUpcomingpara3}<br></br>
-<b>View details</b> </p>
+<a href='/register'><b>Know details</b></a></p>
         </div>
     </div>
     <div className="carousel-item">
@@ -243,10 +190,10 @@ const SeriesContent =() => {
         <img src={series_circle_3} alt='series1' className='mb-5 rotate-image'></img>
         <h1 className='color-white main-text-font'>Workshop</h1>
       <p className='color-white explain-text-font'>{seiresWorkshoppara1}<br></br>
-<b>View details</b>
+      <a href='/register'><b>Know details</b></a>
 <br></br><br></br>
 {seiresWorkshoppara2}<br></br>
-<b>View details</b></p>
+      <a href='/register'><b>Know details</b></a></p>
         </div>
     </div>
   </div>
@@ -277,14 +224,14 @@ const Speakers = () => {
   <div class="card-deck mt-5">
   <div class="card darkbg">
     <div class="card-body text-center text-white">
-    <img class="card-img-top" src={s_lopa} style = {{"width":"60%"}}alt="Card image"/>
+    <img class="card-img-top" src={s_lopa} style = {{"width":"60%"}}alt="Card"/>
       <p class="font-weight-bold pt-2">Dr. Lopa Mudraa Basuu</p>
       <small class="card-text"> Global Leader, Cyber Security Governance, Risk & Compliance Nissan Motor Corporation</small>
     </div>
   </div>
   <div class="card darkbg">
     <div class="card-body text-center text-white">
-    <img class="card-img-top" src={s_rakshith} style = {{"width":"60%"}}alt="Card image"/>
+    <img class="card-img-top" src={s_rakshith} style = {{"width":"60%"}} alt="Card"/>
       <p class="font-weight-bold pt-2">Rakshit Tandon</p>
       <small class="card-text">Cyber security Expert & 
 TedX speaker</small>
@@ -292,7 +239,7 @@ TedX speaker</small>
   </div>
   <div class="card darkbg">
     <div class="card-body text-center text-white">
-    <img class="card-img-top" src={s_subhajit} style = {{"width":"60%"}}alt="Card image"/>
+    <img class="card-img-top" src={s_subhajit} style = {{"width":"60%"}}alt="Card"/>
       <p class="font-weight-bold pt-2">Subhajit Deb</p>
       <small class="card-text"> CISO, 
 Dr. Reddy’s Laboratory</small>
@@ -300,7 +247,7 @@ Dr. Reddy’s Laboratory</small>
   </div>
   <div class="card darkbg">
     <div class="card-body text-center text-white">
-    <img class="card-img-top" src={s_prateek} style = {{"width":"60%"}}alt="Card image"/>
+    <img class="card-img-top" src={s_prateek} style = {{"width":"60%"}}alt="Card"/>
       <p class="font-weight-bold pt-2">Prateek Mishra</p>
       <small class="card-text">CISO, 
 IDBI Federal Life Insurance</small>
@@ -310,7 +257,7 @@ IDBI Federal Life Insurance</small>
 <div class="card-deck mt-4">
   <div class="card darkbg">
     <div class="card-body text-center text-white">
-    <img class="card-img-top" src={s_jaspreet} style = {{"width":"60%"}}alt="Card image"/>
+    <img class="card-img-top" src={s_jaspreet} style = {{"width":"60%"}}alt="Card"/>
       <p class="font-weight-bold pt-2">Jaspreet Singh</p>
       <small class="card-text">Partner – Cyber Security | 
 Africa, India & Middle East (AIM) | 
@@ -319,7 +266,7 @@ Advisory Services, Ernst & Young</small>
   </div>
   <div class="card darkbg">
     <div class="card-body text-center text-white">
-    <img class="card-img-top" src={s_ratan} style = {{"width":"60%"}}alt="Card image"/>
+    <img class="card-img-top" src={s_ratan} style = {{"width":"60%"}}alt="Card"/>
       <p class="font-weight-bold pt-2">Ratan Jyoti </p>
       <small class="card-text">CISO,
  Ujjivan Small Finance Bank</small>
@@ -327,7 +274,7 @@ Advisory Services, Ernst & Young</small>
   </div>
   <div class="card darkbg">
     <div class="card-body text-center text-white">
-    <img class="card-img-top" src={s_ranjan} style = {{"width":"60%"}}alt="Card image"/>
+    <img class="card-img-top" src={s_ranjan} style = {{"width":"60%"}}alt="Card"/>
       <p class="font-weight-bold pt-2">Ranjan Revandkar</p>
       <small class="card-text">Head Information Security, 
 Sun Pharma</small>
@@ -335,7 +282,7 @@ Sun Pharma</small>
   </div>
   <div class="card darkbg">
     <div class="card-body text-center text-white">
-    <img class="card-img-top" src={s_vikas} style = {{"width":"60%"}}alt="Card image"/>
+    <img class="card-img-top" src={s_vikas} style = {{"width":"60%"}}alt="Card"/>
       <p class="font-weight-bold pt-2">Vikas Arora</p>
       <small class="card-text">Vice President - Global Security and IT, 
 Toluna</small>
@@ -347,7 +294,7 @@ Toluna</small>
   <div class="card-deck mt-5">
   <div class="card darkbg">
     <div class="card-body text-center text-white">
-    <img class="card-img-top" src={s_souurab} style = {{"width":"60%"}}alt="Card image"/>
+    <img class="card-img-top" src={s_souurab} style = {{"width":"60%"}}alt="Card"/>
       <p class="font-weight-bold pt-2">Sourabh Tiwari</p>
       <small class="card-text">CIO, 
 Meril Life</small>
@@ -355,7 +302,7 @@ Meril Life</small>
   </div>
   <div class="card darkbg">
     <div class="card-body text-center text-white">
-    <img class="card-img-top" src={s_hitesh} style = {{"width":"60%"}}alt="Card image"/>
+    <img class="card-img-top" src={s_hitesh} style = {{"width":"60%"}}alt="Card"/>
       <p class="font-weight-bold pt-2">Hitesh Mulani</p>
       <small class="card-text">Group CISO, 
 Mahindra & Mahindra</small>
@@ -401,7 +348,7 @@ const WorkshopText = () => {
   return <div className='container'>
   <h1 className='main-text-font color-white'>Workshop</h1>
   <p className='mt-5 explain-text color-grey'>{workshopPara1}<br></br><br></br>
-This is a paid experience. <b>Click here</b> to register or know more details on the same. </p>
+This is a paid experience. <a style = {{color:"white"}} href='/register'><b>Click Here</b></a> to register or know more details on the same. </p>
   </div>
 }
 
@@ -489,7 +436,7 @@ class Register extends React.Component {
     this.state = initialState
     this.handleChange = this.handleChange.bind(this)
     this.sendMail = this.sendMail.bind(this)
-
+  
   }
   handleChange(event){
     const value = event.target.type === 'checkbox' ? event.target.checked : event.target.value;
@@ -523,31 +470,31 @@ class Register extends React.Component {
         <div>
     <form method="post" action="">
     <div className="form-group">
-      <label htmlFor="InputName" className='explain-text'><b>YOUR NAME</b></label>
+      <label htmlFor="InputName" className='explain-text'><b>FULL NAME</b></label>
       <input type="text" className="form-control input-custom" id="InputName" name="name"  value={this.state.name} onChange={this.handleChange}></input>
     </div>
     <div className="form-group">
       <label htmlFor="InputDesgination" className='explain-text'><b>DESIGNATION</b></label>
-      <input type="text" className="form-control input-custom" id="InputDesgination" name="designation" value={this.state.designation} onChange={this.handleChange}/>
+      <input type="text" className="form-control input-custom" id="InputDesgination" name="designation" value={this.state.designation} onChange={this.handleChange} required/>
     </div>
     <div className="form-group">
       <label htmlFor="InputCompanyName" className='explain-text'><b>COMPANY NAME</b></label>
       <input type="text" className="form-control input-custom" id="InputCompanyName" name="company" value={this.state.company} onChange={this.handleChange} />
     </div>
     <div className="form-group">
-      <label htmlFor="InputPhone" className='explain-text'><b>PHONE</b></label>
+      <label htmlFor="InputPhone" className='explain-text'><b>MOBILE</b></label>
       <input type="tel" className="form-control input-custom" id="InputPhone" name="phone" value={this.state.phone} onChange={this.handleChange}/>
     </div>
     <div className="form-group">
       <label htmlFor="InputEmail1" className='explain-text'><b>EMAIL</b></label>
       <input type="email" className="form-control input-custom" id="InputEmail1" name="mail" value={this.state.mail} onChange={this.handleChange}/>
-      <small id="emailHelp" className="form-text text-muted">Well never share your email with anyone else.</small>
+      <small id="emailHelp" className="form-text text-muted">We'll never share your email with anyone else.</small>
     </div>
   <fieldset className="form-group">
-    <label><span className='explain-text'><b>I WANT TO</b></span></label>
+    <label><span className='explain-text'><b>I WANT</b></span></label>
     <div className="form-check">
       <label className="form-check-label">
-        <input type="radio" className="form-check-input" name="optionsRadio" id="optionsRadios1" value="option1" onChange={this.handleChange}/>
+        <input type="radio" className="form-check-input" name="optionsRadios" id="optionsRadios1" value="option1" onChange={this.handleChange}/>
         <span className='explain-text'><b>to attend as a delegate for the conference</b></span>
       </label>
     </div>
@@ -560,7 +507,7 @@ class Register extends React.Component {
     <div className="form-check">
     <label className="form-check-label">
         <input type="radio" className="form-check-input" name="optionsRadios" id="optionsRadios3" value="option3"  onChange={this.handleChange}/>
-        <span className='explain-text'><b>sponsorship details</b></span>
+        <span className='explain-text'><b>to know more about sponsorship details</b></span>
       </label>
     </div>
     <div className="form-check">
@@ -577,12 +524,6 @@ class Register extends React.Component {
     </div>
     <div className="form-check">
     <label className="form-check-label">
-        <input type="radio" className="form-check-input" name="optionsRadios" id="optionsRadios6" value="option6"  onChange={this.handleChange}/>
-        <span className='explain-text'><b>sponsorship details</b></span>
-      </label>
-    </div>
-    <div className="form-check">
-    <label className="form-check-label">
         <input type="radio" className="form-check-input" name="optionsRadios" id="optionsRadios7" value="option7"  onChange={this.handleChange}/>
         <span className='explain-text'><b>other details</b></span>
       </label>
@@ -594,10 +535,6 @@ class Register extends React.Component {
     </div>
   <button type="submit" className="btn btn-dark mb-5" onClick={this.sendMail}>Submit</button>
     </form>
-    <span className='explain-text'>
-        <p><b>For award nominations, please click here.</b></p><br></br>
-        <p><b>For delegate – conference- questionnaires, please click here.</b></p><br></br>
-        </span>
     </div>
         </div>
     </div>
@@ -647,8 +584,8 @@ YOUR FRIENDS</b>
 class ConsumexMap extends Component {
   static defaultProps = {
     center: {
-      lat: 12.971599,
-      lng: 77.594566
+      lat: 12.960750,
+      lng: 77.508270
     },
     zoom: 15,
   };

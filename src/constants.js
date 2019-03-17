@@ -202,8 +202,8 @@ export const loadingTextheading = "Consumex Productions Presentes"
 export const loadingTextpara = "Information Security Series & Cyber Sercurity Workshop"
 
 export const landingTextheading = "4th edition Information Security Summit & Indian CISO Awards."
-export const landingTextpara = `The 4th edition of the Information  Security Symposium under the Consumex Cyber Security Series will take place in May from 30th to 31st at JW Mariott, Mumbai.
-  This private gathering is hosting Information and Information Security Heads of various organizations across India for a 2 day conference discussing the latest trends,
+export const landingTextpara = `The 4th edition of the Information  Security Symposium under the Consumex Cyber Security Series will take place on May 30th and 31st at JW Mariott, Mumbai.
+  This private gathering is hosting IT and IT Security Heads of various organizations across India for a 2 day conference discussing the latest trends,
   experiences, insights and expectations in the realm of cyber security.`
 
 
@@ -217,9 +217,9 @@ export const seriesMainpara2 = `Consumex’s cyber security series is the best w
 export const seriesConcludedpara1 = `Recent - Information Security Summit - 3rd edition & Indian CISO awards, New Delhi, India – 13th April 2018,`
 export const seriesConcludedpara2 = `held under the patronage of Ministry of Electronics and Information Technology (MeitY)`
 
-export const seriesUpcomingpara1 = `Information Security Summit & Indian CISO Awards – 5th edition October, Hyderabad.`
+export const seriesUpcomingpara1 = `Information Security Summit & Indian CISO Awards – 5th edition September, Hyderabad.`
 export const seriesUpcomingpara2 = `Information Security Summit & Indian CISO Awards – 6th edition October, Bangalore.` 
-export const seriesUpcomingpara3 = `CISO – CIO Summit & Awards – 7th edition November, Colombo, Sri Lanka.`
+export const seriesUpcomingpara3 = `CISO – CIO Summit & Awards – 6th edition November, Colombo, Sri Lanka.`
 
 export const  seiresWorkshoppara1 = `NIST Cyber Security Framework – Workshop – Hyderabad - October.`
 export const  seiresWorkshoppara2 = `Cyber Security Dashboard – Workshop - Bangalore - October.`
