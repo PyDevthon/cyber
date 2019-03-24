@@ -527,11 +527,11 @@ class AwardsModal extends React.Component {
      <form method="post" action="">
     <div className="form-group">
       <label htmlFor="InputName" className='explain-text'><b>FULL NAME</b></label>
-      <input type="text" className="form-control input-custom" id="InputName" name="name"  value={this.state.name} onChange={this.handleChange} required></input>
+      <input type="text" className="form-control input-custom" id="InputName" name="name"  value={this.state.name} onChange={this.handleChange}></input>
     </div>
     <div className="form-group">
       <label htmlFor="InputDesgination" className='explain-text'><b>DESIGNATION</b></label>
-      <input type="text" className="form-control input-custom" id="InputDesgination" name="designation" value={this.state.designation} onChange={this.handleChange} required/>
+      <input type="text" className="form-control input-custom" id="InputDesgination" name="designation" value={this.state.designation} onChange={this.handleChange}/>
     </div>
     <div className="form-group">
       <label htmlFor="InputCompanyName" className='explain-text'><b>COMPANY NAME</b></label>
@@ -732,11 +732,11 @@ class Register extends React.Component {
     <form method="post" action="">
     <div className="form-group">
       <label htmlFor="InputName" className='explain-text'><b>FULL NAME</b></label>
-      <input type="text" className="form-control input-custom" id="InputName" name="name"  value={this.state.name} onChange={this.handleChange} required></input>
+      <input type="text" className="form-control input-custom" id="InputName" name="name"  value={this.state.name} onChange={this.handleChange} ></input>
     </div>
     <div className="form-group">
       <label htmlFor="InputDesgination" className='explain-text'><b>DESIGNATION</b></label>
-      <input type="text" className="form-control input-custom" id="InputDesgination" name="designation" value={this.state.designation} onChange={this.handleChange} required/>
+      <input type="text" className="form-control input-custom" id="InputDesgination" name="designation" value={this.state.designation} onChange={this.handleChange}/>
     </div>
     <div className="form-group">
       <label htmlFor="InputCompanyName" className='explain-text'><b>COMPANY NAME</b></label>
