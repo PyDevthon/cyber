@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 // Router 
 import { BrowserRouter as Router, Route } from "react-router-dom";
@@ -15,15 +17,20 @@ import iss_logo_black from './iss_logo_black.png';
 import bars_white from './bars_white.png';
 import bars_black from './bars_black.png';
 import s_lopa from './lopa.png';
-import s_hitesh from './hitesh.png';
 import s_jaspreet from './jaspreet.png';
 import s_prateek from './prateek.png';
 import s_rakshith from './rakshith.png';
 import s_ranjan from './ranjan.png';
-import s_ratan from './ratan.png';
 import s_souurab from './souurab.png';
 import s_subhajit from './subhajit.png';
 import s_vikas from './vikas.png';
+import s_puneet from './puneet.png';
+import s_anil from './anil.png';
+import s_patrick from './patrick.png';
+import s_indranil from './indranil.png';
+import s_ninad from './ninad.png';
+import s_himanshu from './himanshu.png';
+
 
 import series_circle_1 from './series_circle_1.png';
 import series_circle_2 from './series_circle_2.png';
@@ -266,10 +273,9 @@ Advisory Services, Ernst & Young</small>
   </div>
   <div class="card darkbg">
     <div class="card-body text-center text-white">
-    <img class="card-img-top" src={s_ratan} style = {{"width":"60%"}}alt="Card"/>
-      <p class="font-weight-bold pt-2">Ratan Jyoti </p>
-      <small class="card-text">CISO,
- Ujjivan Small Finance Bank</small>
+    <img class="card-img-top" src={s_puneet} style = {{"width":"60%"}}alt="Card"/>
+      <p class="font-weight-bold pt-2">Adv. Puneet Bhasin</p>
+      <small class="card-text">Adv. Puneet Bhasin  Cyber Law Expert, Owner- Cyberjure Legal Consulting</small>
     </div>
   </div>
   <div class="card darkbg">
@@ -302,17 +308,52 @@ Meril Life</small>
   </div>
   <div class="card darkbg">
     <div class="card-body text-center text-white">
-    <img class="card-img-top" src={s_hitesh} style = {{"width":"60%"}}alt="Card"/>
-      <p class="font-weight-bold pt-2">Hitesh Mulani</p>
-      <small class="card-text">Group CISO, 
-Mahindra & Mahindra</small>
+    <img class="card-img-top" src={s_anil} style = {{"width":"60%"}}alt="Card"/>
+      <p class="font-weight-bold pt-2">Anil Chiplunkar</p>
+      <small class="card-text">Associate Director, 
+Information Security</small>
+    </div>
+  </div>
+  <div class="card darkbg">
+    <div class="card-body text-center text-white">
+    <img class="card-img-top" src={s_patrick} style = {{"width":"60%"}} alt="Card"/>
+      <p class="font-weight-bold pt-2">Patrick Pitchappa</p>
+      <small class="card-text">Head Information Security, 
+BNP Paribas ISPL</small>
+    </div>
+  </div>
+  <div class="card darkbg">
+    <div class="card-body text-center text-white">
+    <img class="card-img-top" src={s_indranil} style = {{"width":"60%"}} alt="Card"/>
+      <p class="font-weight-bold pt-2">Indranil Chatterjee</p>
+      <small class="card-text">GM Security & Compliance, 
+Reliance Jio Infocomm</small>
+    </div>
+  </div>
+  </div> 
+  <div class="card-deck mt-4">
+   <div class="card darkbg">
+    <div class="card-body text-center text-white">
+    <img class="card-img-top" src={s_ninad} style = {{"width":"60%"}} alt="Card"/>
+      <p class="font-weight-bold pt-2">Ninad Dhavse</p>
+      <small class="card-text">National Stock Exchange(NSE),
+Leader IT Risk & Compliance
+</small>
+    </div>
+  </div>
+  <div class="card darkbg">
+    <div class="card-body text-center text-white">
+    <img class="card-img-top" src={s_himanshu} style = {{"width":"60%"}} alt="Card"/>
+      <p class="font-weight-bold pt-2">Himanshu Gaur</p>
+      <small class="card-text">Lead Consultant Cyber Security,
+TCL
+</small>
     </div>
   </div>
   <div class="card darkbg">
   </div>
   <div class="card darkbg">
   </div>
-
   </div>
   </div>
   </div>
@@ -376,15 +417,185 @@ const Awards = () => {
 <AwardsAnimation></AwardsAnimation>
       </div>
   </div>
+  <AwardsModal></AwardsModal>
 </div>
+<ToastContainer
+position="top-right"
+autoClose={5000}
+hideProgressBar={false}
+newestOnTop={false}
+closeOnClick
+rtl={false}
+pauseOnVisibilityChange
+draggable
+pauseOnHover
+/>
 <Menu></Menu>
     </div>
   )
 }
+
+class AwardsModal extends React.Component {
+  constructor(){
+    super()
+    this.state = {"name":"",
+    "designation":"",
+    "company":"",
+    "phone": "",
+    "mail": "",
+    "industrysector":"",
+    "turnover": "",
+    "city": "",
+    "initiative": "",
+    "security": "",
+    "experiance": "",
+    "qualify": ""
+  }
+    this.handleChange = this.handleChange.bind(this)
+    this.sendMail = this.sendMail.bind(this)
+    this.notify = this.notify.bind(this)
+  }
+  notify (){
+    toast.success("Thank You! Your Response has been noted", {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true
+      });
+  }
+  handleChange(event){
+    const value = event.target.type === 'checkbox' ? event.target.checked : event.target.value;
+    const name = event.target.name
+    this.setState({[name]: value})
+  }
+  sendMail(event){
+    event.preventDefault()
+    toast.info('Processing', {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      });
+    fetch('https://consumex-mail.herokuapp.com/mail/', {
+      method: "POST", // *GET, POST, PUT, DELETE, etc.
+      headers: {
+          "Content-Type": "application/json; charset=utf-8",
+          // "Content-Type": "application/x-www-form-urlencoded",
+      },
+      body: JSON.stringify(this.state), // body data type must match "Content-Type" header
+  }).then((response)=> {
+    this.setState({"name":"",
+    "designation":"",
+    "company":"",
+    "phone": "",
+    "mail": "",
+    "industrysector":"",
+    "turnover": "",
+    "city": "",
+    "initiative": "",
+    "security": "",
+    "experiance": "",
+    "qualify": ""
+  })
+    this.notify()
+  }).catch((error) => {
+    toast.error('Something Went Wrong, Please contact Support!', {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      });
+  })
+  }
+ render () {
+ return (
+<div class="modal" id="myModal">
+ <div class="modal-dialog">
+   <div class="modal-content">
+     <div class="modal-header">
+       <h4 class="modal-title">CISO AWARDS</h4>
+       <button type="button" class="close" data-dismiss="modal">&times;</button>
+     </div>
+
+     <div class="modal-body">
+     <form method="post" action="">
+    <div className="form-group">
+      <label htmlFor="InputName" className='explain-text'><b>FULL NAME</b></label>
+      <input type="text" className="form-control input-custom" id="InputName" name="name"  value={this.state.name} onChange={this.handleChange} required></input>
+    </div>
+    <div className="form-group">
+      <label htmlFor="InputDesgination" className='explain-text'><b>DESIGNATION</b></label>
+      <input type="text" className="form-control input-custom" id="InputDesgination" name="designation" value={this.state.designation} onChange={this.handleChange} required/>
+    </div>
+    <div className="form-group">
+      <label htmlFor="InputCompanyName" className='explain-text'><b>COMPANY NAME</b></label>
+      <input type="text" className="form-control input-custom" id="InputCompanyName" name="company" value={this.state.company} onChange={this.handleChange} />
+    </div>
+    <div className="form-group">
+      <label htmlFor="InputPhone" className='explain-text'><b>MOBILE</b></label>
+      <input type="tel" className="form-control input-custom" id="InputPhone" name="phone" value={this.state.phone} onChange={this.handleChange}/>
+    </div>
+    <div className="form-group">
+      <label htmlFor="InputEmail1" className='explain-text'><b>EMAIL</b></label>
+      <input type="email" className="form-control input-custom" id="InputEmail1" name="mail" value={this.state.mail} onChange={this.handleChange}/>
+      <small id="emailHelp" className="form-text text-muted">We'll never share your email with anyone else.</small>
+    </div>
+    <div className="form-group">
+      <label htmlFor="InputEmail1" className='explain-text'><b>INDUSTRY SECTOR</b></label>
+      <input type="text" className="form-control input-custom" id="InputIndustrySector" name="industrysector" value={this.state.industrysector} onChange={this.handleChange}/>
+    </div>
+    <div className="form-group">
+      <label htmlFor="InputTurnover" className='explain-text'><b>COMAPNY TURNOVER <small>(in crores)</small></b></label>
+      <input type="text" className="form-control input-custom" id="InputTurnover" name="turnover" value={this.state.turnover} onChange={this.handleChange}/>
+    </div>
+    <div className="form-group">
+      <label htmlFor="InputTurnover" className='explain-text'><b>CITY</b></label>
+      <input type="text" className="form-control input-custom" id="InputCity" name="city" value={this.state.city} onChange={this.handleChange}/>
+    </div>
+    <div className="form-group">
+      <label htmlFor="InputComment" className='explain-text'><b>List any 3 security initiatives taken by your organization in the last 6 months
+<small>(Provide comprehensive details to qualify)</small></b></label>
+      <textarea className="form-control input-custom" rows="5" id="InputInitiative" name='initiative' onChange={this.handleChange} value={this.state.initiative}></textarea>
+    </div>
+    <div className="form-group">
+      <label htmlFor="InputComment" className='explain-text'><b>How are you ensuring complete security of your organization? 
+<small>(Elaborate the same.)</small></b></label>
+      <textarea className="form-control input-custom" rows="5" id="InputSecurity" name='security' onChange={this.handleChange} value={this.state.security}></textarea>
+    </div>
+    <div className="form-group">
+      <label htmlFor="InputTurnover" className='explain-text'><b>Please mention your total years of experience in the field of Information Security:
+</b></label>
+      <input type="text" className="form-control input-custom" id="InputExperiance" name="experiance" value={this.state.experiance} onChange={this.handleChange}/>
+    </div>
+    <div className="form-group">
+      <label htmlFor="InputComment" className='explain-text'><b>Why do you think you qualify for the award?</b></label>
+      <textarea className="form-control input-custom" rows="5" id="InputQualify" name='qualify' onChange={this.handleChange} value={this.state.qualify}></textarea>
+    </div>
+  <button type="submit" className="btn btn-dark mb-5" onClick={this.sendMail}>Submit</button>
+    </form>
+     </div>
+     <div class="modal-footer">
+       <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+     </div>
+
+   </div>
+ </div>
+</div>
+ )
+}
+}
+
 const AwardsText = () => {
   return <div className='container'>
   <h1 className='main-text-font color-white'>Indain CISO Awards.</h1>
-  <p className='mt-5 explain-text color-grey'>{awardsMainpara1}</p>
+  <p className='mt-5 explain-text color-grey'>{awardsMainpara1} Nominate for the 4th edition summit <a  data-toggle="modal" data-target="#myModal"> <bold className='text-white'>Here</bold>
+</a></p>
   </div>
 }
 
@@ -410,7 +621,7 @@ const AboutUs = () => {
  <div className='row' style={{"marginTop":"50px"}}>
     <div className='col'>
     <CountUp end={5} suffix='+' className='font-color-white display-4 explain-text font-weight-bold d-flex justify-content-center'  duration={3}/>
-    <div className='font-color-white explain-text font-weight-bold about-text d-flex justify-content-center' style ={{"marginTop":"5px"}}><small><strong>CYBER SECURITY EVENTS</strong></small></div>
+    <div className='font-color-white explain-text font-weight-bold about-text d-flex justify-content-center' style ={{"marginTop":"5px"}}><small><strong>SECURITY EVENTS</strong></small></div>
     </div>
     <div className='col'>
     <CountUp end={10}  suffix='+' className='font-color-white display-4 explain-text font-weight-bold d-flex justify-content-center' duration={3}/>
@@ -418,7 +629,7 @@ const AboutUs = () => {
     </div>
     <div className='col'>
     <CountUp end={1500} suffix='+' className='font-color-white display-4 explain-text font-weight-bold d-flex justify-content-center' duration={3}/>
-    <div className='font-color-white explain-text font-weight-bold about-text d-flex justify-content-center' style ={{"marginTop":"5px"}}><small><strong>ATTENDIES</strong></small></div>
+    <div className='font-color-white explain-text font-weight-bold about-text d-flex justify-content-center' style ={{"marginTop":"5px"}}><small><strong>ATTENDEES</strong></small></div>
     </div>
     <div className='col'>
     <CountUp end={10} suffix='+' className='font-color-white display-4 explain-text font-weight-bold d-flex justify-content-center' duration={3}/>
@@ -436,7 +647,19 @@ class Register extends React.Component {
     this.state = initialState
     this.handleChange = this.handleChange.bind(this)
     this.sendMail = this.sendMail.bind(this)
-  
+    this.notify = this.notify.bind(this)
+    this.validate = this.validate.bind(this)
+  }
+
+  notify (){
+    toast.success("Thank You! Your Response has been noted", {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true
+      });
   }
   handleChange(event){
     const value = event.target.type === 'checkbox' ? event.target.checked : event.target.value;
@@ -444,8 +667,36 @@ class Register extends React.Component {
     this.setState({[name]: value})
   }
 
+  validate(){
+    let validForm = true;
+    ['optionsRadios', 'name', 'designation', 'company', 'phone', 'mail'].forEach(element => {
+      if (this.state[element] === '') {
+        validForm= false
+      } 
+    })
+    return validForm
+  }
   sendMail(event){
     event.preventDefault()
+    if (!this.validate()){
+      toast.warn('Please fill the following Full Name, Deisgnation, Company, Phone, Email and I Want Option', {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        });
+        return 
+    }
+    toast.info('Processing', {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      });
     fetch('https://consumex-mail.herokuapp.com/mail/', {
       method: "POST", // *GET, POST, PUT, DELETE, etc.
       headers: {
@@ -455,6 +706,16 @@ class Register extends React.Component {
       body: JSON.stringify(this.state), // body data type must match "Content-Type" header
   }).then((response)=> {
     this.setState(initialState)
+    this.notify()
+  }).catch((error) => {
+    toast.error('Something Went Wrong, Please contact Support!', {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      });
   })
   }
   render(){
@@ -471,7 +732,7 @@ class Register extends React.Component {
     <form method="post" action="">
     <div className="form-group">
       <label htmlFor="InputName" className='explain-text'><b>FULL NAME</b></label>
-      <input type="text" className="form-control input-custom" id="InputName" name="name"  value={this.state.name} onChange={this.handleChange}></input>
+      <input type="text" className="form-control input-custom" id="InputName" name="name"  value={this.state.name} onChange={this.handleChange} required></input>
     </div>
     <div className="form-group">
       <label htmlFor="InputDesgination" className='explain-text'><b>DESIGNATION</b></label>
@@ -536,6 +797,19 @@ class Register extends React.Component {
   <button type="submit" className="btn btn-dark mb-5" onClick={this.sendMail}>Submit</button>
     </form>
     </div>
+    <ToastContainer
+position="top-right"
+autoClose={5000}
+hideProgressBar={false}
+newestOnTop={false}
+closeOnClick
+rtl={false}
+pauseOnVisibilityChange
+draggable
+pauseOnHover
+/>
+{/* Same as */}
+<ToastContainer />
         </div>
     </div>
   </div>

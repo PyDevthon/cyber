@@ -201,7 +201,7 @@ export const initialState = {
 export const loadingTextheading = "Consumex Productions Presentes"
 export const loadingTextpara = "Information Security Series & Cyber Sercurity Workshop"
 
-export const landingTextheading = "4th edition Information Security Summit & Indian CISO Awards."
+export const landingTextheading = "India's Most Awaited and exclusively curated sessions for security professionals"
 export const landingTextpara = `The 4th edition of the Information  Security Symposium under the Consumex Cyber Security Series will take place on May 30th and 31st at JW Mariott, Mumbai.
   This private gathering is hosting IT and IT Security Heads of various organizations across India for a 2 day conference discussing the latest trends,
   experiences, insights and expectations in the realm of cyber security.`
@@ -228,8 +228,7 @@ export const workshopPara1 = `A day workshop on NIST Cyber Security Framework is
     This workshop offers a one day interactive session by a leading Cyber Security Researcher, course materials and a certificate of attendance with follow up assistance after the course.`
 
 export const awardsMainpara1 = `The Indian CISO Awards 2019 will honour individuals who have significantly contributed to the overall development of Information Security programs within their organizations. 
-We believe this recognition will further boost their efforts in the future to enable digital transformation, and motivate many to take note and follow suit.
-Nominate for the 4th edition summit awards here.`
+We believe this recognition will further boost their efforts in the future to enable digital transformation, and motivate many to take note and follow suit`
 
 export const  aboutManinpara1 = `As a professional conference organizer, Consumex Productions business is to convey high-value information that is undoubtedly relevant for the end-users. 
                             Our platform offers real-world solutions to critical business challenges and our subjects have been widely researched and logically programmed.`
