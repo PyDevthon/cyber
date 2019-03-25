@@ -551,7 +551,7 @@ class AwardsModal extends React.Component {
       <input type="text" className="form-control input-custom" id="InputIndustrySector" name="industrysector" value={this.state.industrysector} onChange={this.handleChange}/>
     </div>
     <div className="form-group">
-      <label htmlFor="InputTurnover" className='explain-text'><b>COMAPNY TURNOVER <small>(in crores)</small></b></label>
+      <label htmlFor="InputTurnover" className='explain-text'><b>COMPANY TURNOVER <small>(in crores)</small></b></label>
       <input type="text" className="form-control input-custom" id="InputTurnover" name="turnover" value={this.state.turnover} onChange={this.handleChange}/>
     </div>
     <div className="form-group">
@@ -593,7 +593,7 @@ class AwardsModal extends React.Component {
 
 const AwardsText = () => {
   return <div className='container'>
-  <h1 className='main-text-font color-white'>Indain CISO Awards.</h1>
+  <h1 className='main-text-font color-white'>Indian CISO Awards.</h1>
   <p className='mt-5 explain-text color-grey'>{awardsMainpara1} Nominate for the 4th edition summit <a  data-toggle="modal" data-target="#myModal"> <bold className='text-white'>Here</bold>
 </a></p>
   </div>
