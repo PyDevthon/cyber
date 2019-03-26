@@ -201,7 +201,7 @@ export const initialState = {
 export const loadingTextheading = "Consumex Productions Presentes"
 export const loadingTextpara = "Information Security Series & Cyber Sercurity Workshop"
 
-export const landingTextheading = "India's Most Awaited and exclusively curated sessions for security professionals"
+export const landingTextheading = "India's most awaited and exclusively curated sessions for security professionals"
 export const landingTextpara = `The 4th edition of the Information  Security Symposium under the Consumex Cyber Security Series will take place on May 30th and 31st at JW Mariott, Mumbai.
   This private gathering is hosting IT and IT Security Heads of various organizations across India for a 2 day conference discussing the latest trends,
   experiences, insights and expectations in the realm of cyber security.`

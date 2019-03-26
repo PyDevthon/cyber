@@ -30,6 +30,7 @@ import s_patrick from './patrick.png';
 import s_indranil from './indranil.png';
 import s_ninad from './ninad.png';
 import s_himanshu from './himanshu.png';
+import s_sridhar from './sridhar.png'
 
 
 import series_circle_1 from './series_circle_1.png';
@@ -351,6 +352,15 @@ TCL
     </div>
   </div>
   <div class="card darkbg">
+  <div class="card-body text-center text-white">
+    <img class="card-img-top" src={s_sridhar} style = {{"width":"60%"}} alt="Card"/>
+      <p class="font-weight-bold pt-2">Sridhar Govardhan</p>
+      <small class="card-text">
+Chief Information Security Officer, 
+Wipro Limited
+
+</small>
+    </div>
   </div>
   <div class="card darkbg">
   </div>
@@ -834,16 +844,6 @@ Bangalore – 560 072.</b>
       </h4>
       <p className='explain-text'>
 enquiry@consumex-productions.com</p>
-    </div>
-    <div class="col-sm">
-    <p className='explain-text'>
-      <b>SHARE THE INFORMATION 
-SECURITY STORY WITH 
-YOUR FRIENDS</b>
-      </p>
-      <span className="m-3"><SocialIcon network="twitter" bgColor="#ff5a01"/></span>
-      <span className="m-3"><SocialIcon url="http://facebook.com/jaketrent" /></span>
-      <span className="m-3"><SocialIcon url="http://linkedin.com/jaketrent" /></span>
     </div>
   </div>
 </div>
