@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import './App.css';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import UnderConstruction from 'react-under-construction';
+import 'react-under-construction/build/css/index.css';
 
 // Router 
 import { BrowserRouter as Router, Route } from "react-router-dom";
@@ -62,7 +64,7 @@ class App extends Component {
         <Route exact path="/contact" component={Contact} />
         <Route exact path="/about" component={AboutUs} />
         <Route exact path="/series" component={Series} />
-        <Route exact path="/workshop" component={Workshop} />
+        <Route exact path="/partners" component={Construction} />
         <Route exact path="/awards" component = {Awards}/>
         <Route exact path="/register" component = {Register}/>
         <Route exact path="/speaker" component = {Speakers}/>
@@ -72,8 +74,29 @@ class App extends Component {
   }
 }
 
-
-
+const Construction = () => (
+  <div className='container'>
+  <NavBar iss={iss_logo_white} bars={bars_white}></NavBar>
+  <div style={{marginTop: '10%'}}>
+  <UnderConstruction
+    logo={{
+      src: iss_logo_white,
+      alt: 'alt text'
+    }}
+    title={{
+      text: 'Under Construction'
+    }}
+    description={{
+      text: 'This Page is under construction. We\'ll be here soon',
+      style: {
+        maxWidth: '440px',
+      }
+    }}
+  />
+  </div>
+  <Menu></Menu>
+  </div>
+);
 
 const NavBar = ({iss, bars}) =>{
   return <nav className="navbar navbar-expand-xl">
@@ -103,7 +126,7 @@ const Menu = () => {
  <li><span className='main-text-font cool-link'><a href="/" className='small pl-5'>Home</a></span></li>
  <li><span className='main-text-font cool-link'><a href="/series" className='small pl-5'>Series</a></span></li>
  <li ><span className='main-text-font cool-link'><a href="/speaker" className='small pl-5'>Speakers</a></span></li>
-<li ><span className='main-text-font cool-link'><a href="/workshop" className='small pl-5'>Workshop</a></span></li>
+<li ><span className='main-text-font cool-link'><a href="/partners" className='small pl-5'>Partners</a></span></li>
 <li ><span className='main-text-font cool-link'><a href="/awards" className='small pl-5'>Awards</a></span></li>
 <li ><span className='main-text-font cool-link'><a href="/about" className='small pl-5'>About</a></span></li>
 <li ><span className='main-text-font cool-link'><a href="/register" className='small pl-5'>Register</a></span></li>
@@ -178,7 +201,7 @@ const SeriesContent =() => {
     <div  className='center-screen'>
         <img src={series_circle_1} className='mb-5 rotate-image' alt='series1'></img>
         <h1 className='color-white main-text-font'>Concluded</h1>
-      <p className='color-white explain-text-font'>{seriesConcludedpara1}<br></br>{seriesConcludedpara2}<br></br><br></br>
+      <p className='color-white explain-text-font'>{seriesConcludedpara1}<br></br>{seriesConcludedpara2}. <a href='http://www.cpinfosec.in' target='_blank'><strong>Click Here To know more</strong></a><br></br><br></br>
 </p>
     </div>
     </div>
@@ -231,6 +254,16 @@ const Speakers = () => {
   <div className="carousel-item active">
   <div class="card-deck mt-5">
   <div class="card darkbg">
+  <div class="card-body text-center text-white">
+    <img class="card-img-top" src={s_sridhar} style = {{"width":"60%"}} alt="Card"/>
+      <p class="font-weight-bold pt-2">Sridhar Govardhan</p>
+      <small class="card-text">
+Chief Information Security Officer, 
+Wipro Limited
+</small>
+    </div>
+  </div>
+  <div class="card darkbg">
     <div class="card-body text-center text-white">
     <img class="card-img-top" src={s_lopa} style = {{"width":"60%"}}alt="Card"/>
       <p class="font-weight-bold pt-2">Dr. Lopa Mudraa Basuu</p>
@@ -253,7 +286,9 @@ TedX speaker</small>
 Dr. Reddy’s Laboratory</small>
     </div>
   </div>
-  <div class="card darkbg">
+</div>
+<div class="card-deck mt-4">
+<div class="card darkbg">
     <div class="card-body text-center text-white">
     <img class="card-img-top" src={s_prateek} style = {{"width":"60%"}}alt="Card"/>
       <p class="font-weight-bold pt-2">Prateek Mishra</p>
@@ -261,8 +296,6 @@ Dr. Reddy’s Laboratory</small>
 IDBI Federal Life Insurance</small>
     </div>
   </div>
-</div>
-<div class="card-deck mt-4">
   <div class="card darkbg">
     <div class="card-body text-center text-white">
     <img class="card-img-top" src={s_jaspreet} style = {{"width":"60%"}}alt="Card"/>
@@ -287,7 +320,11 @@ Advisory Services, Ernst & Young</small>
 Sun Pharma</small>
     </div>
   </div>
-  <div class="card darkbg">
+</div>
+  </div>
+  <div className="carousel-item">
+  <div class="card-deck mt-5">
+    <div class="card darkbg">
     <div class="card-body text-center text-white">
     <img class="card-img-top" src={s_vikas} style = {{"width":"60%"}}alt="Card"/>
       <p class="font-weight-bold pt-2">Vikas Arora</p>
@@ -295,10 +332,6 @@ Sun Pharma</small>
 Toluna</small>
     </div>
   </div>
-</div>
-  </div>
-  <div className="carousel-item">
-  <div class="card-deck mt-5">
   <div class="card darkbg">
     <div class="card-body text-center text-white">
     <img class="card-img-top" src={s_souurab} style = {{"width":"60%"}}alt="Card"/>
@@ -323,6 +356,8 @@ Information Security</small>
 BNP Paribas ISPL</small>
     </div>
   </div>
+  </div> 
+  <div class="card-deck mt-4">
   <div class="card darkbg">
     <div class="card-body text-center text-white">
     <img class="card-img-top" src={s_indranil} style = {{"width":"60%"}} alt="Card"/>
@@ -331,8 +366,6 @@ BNP Paribas ISPL</small>
 Reliance Jio Infocomm</small>
     </div>
   </div>
-  </div> 
-  <div class="card-deck mt-4">
    <div class="card darkbg">
     <div class="card-body text-center text-white">
     <img class="card-img-top" src={s_ninad} style = {{"width":"60%"}} alt="Card"/>
@@ -348,17 +381,6 @@ Leader IT Risk & Compliance
       <p class="font-weight-bold pt-2">Himanshu Gaur</p>
       <small class="card-text">Lead Consultant Cyber Security,
 TCL
-</small>
-    </div>
-  </div>
-  <div class="card darkbg">
-  <div class="card-body text-center text-white">
-    <img class="card-img-top" src={s_sridhar} style = {{"width":"60%"}} alt="Card"/>
-      <p class="font-weight-bold pt-2">Sridhar Govardhan</p>
-      <small class="card-text">
-Chief Information Security Officer, 
-Wipro Limited
-
 </small>
     </div>
   </div>
