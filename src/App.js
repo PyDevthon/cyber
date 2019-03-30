@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import UnderConstruction from 'react-under-construction';
-import 'react-under-construction/build/css/index.css';
+
 
 // Router 
 import { BrowserRouter as Router, Route } from "react-router-dom";
@@ -77,23 +76,9 @@ class App extends Component {
 const Construction = () => (
   <div className='container'>
   <NavBar iss={iss_logo_white} bars={bars_white}></NavBar>
-  <div style={{marginTop: '10%'}}>
-  <UnderConstruction
-    logo={{
-      src: iss_logo_white,
-      alt: 'alt text'
-    }}
-    title={{
-      text: 'Under Construction'
-    }}
-    description={{
-      text: 'This Page is under construction. We\'ll be here soon',
-      style: {
-        maxWidth: '440px',
-      }
-    }}
-  />
-  </div>
+<div className='justify-content-center d-flex text-white' style={{marginTop:"25%"}}>
+  <h1>This Page is under construction. We'll be here soon</h1>
+</div>
   <Menu></Menu>
   </div>
 );
@@ -201,7 +186,8 @@ const SeriesContent =() => {
     <div  className='center-screen'>
         <img src={series_circle_1} className='mb-5 rotate-image' alt='series1'></img>
         <h1 className='color-white main-text-font'>Concluded</h1>
-      <p className='color-white explain-text-font'>{seriesConcludedpara1}<br></br>{seriesConcludedpara2}. <a href='http://www.cpinfosec.in' target='_blank'><strong>Click Here To know more</strong></a><br></br><br></br>
+      <p className='color-white explain-text-font'>{seriesConcludedpara1}<br></br>{seriesConcludedpara2}.<br></br><br></br>
+      <a href='https://cpinfosec.com' target='_blank'><b>Know More</b></a>
 </p>
     </div>
     </div>
@@ -258,7 +244,7 @@ const Speakers = () => {
     <img class="card-img-top" src={s_sridhar} style = {{"width":"60%"}} alt="Card"/>
       <p class="font-weight-bold pt-2">Sridhar Govardhan</p>
       <small class="card-text">
-Chief Information Security Officer, 
+CISO, <br></br>
 Wipro Limited
 </small>
     </div>
@@ -274,7 +260,7 @@ Wipro Limited
     <div class="card-body text-center text-white">
     <img class="card-img-top" src={s_rakshith} style = {{"width":"60%"}} alt="Card"/>
       <p class="font-weight-bold pt-2">Rakshit Tandon</p>
-      <small class="card-text">Cyber security Expert & 
+      <small class="card-text">Cyber Security Expert <br></br>& 
 TedX speaker</small>
     </div>
   </div>
@@ -282,7 +268,7 @@ TedX speaker</small>
     <div class="card-body text-center text-white">
     <img class="card-img-top" src={s_subhajit} style = {{"width":"60%"}}alt="Card"/>
       <p class="font-weight-bold pt-2">Subhajit Deb</p>
-      <small class="card-text"> CISO, 
+      <small class="card-text"> CISO,<br></br>
 Dr. Reddy’s Laboratory</small>
     </div>
   </div>
@@ -292,7 +278,7 @@ Dr. Reddy’s Laboratory</small>
     <div class="card-body text-center text-white">
     <img class="card-img-top" src={s_prateek} style = {{"width":"60%"}}alt="Card"/>
       <p class="font-weight-bold pt-2">Prateek Mishra</p>
-      <small class="card-text">CISO, 
+      <small class="card-text">CISO, <br></br>
 IDBI Federal Life Insurance</small>
     </div>
   </div>
@@ -309,14 +295,14 @@ Advisory Services, Ernst & Young</small>
     <div class="card-body text-center text-white">
     <img class="card-img-top" src={s_puneet} style = {{"width":"60%"}}alt="Card"/>
       <p class="font-weight-bold pt-2">Adv. Puneet Bhasin</p>
-      <small class="card-text">Adv. Puneet Bhasin  Cyber Law Expert, Owner- Cyberjure Legal Consulting</small>
+      <small class="card-text">Adv. Puneet Bhasin  Cyber Law Expert, Owner - Cyberjure Legal Consulting</small>
     </div>
   </div>
   <div class="card darkbg">
     <div class="card-body text-center text-white">
     <img class="card-img-top" src={s_ranjan} style = {{"width":"60%"}}alt="Card"/>
       <p class="font-weight-bold pt-2">Ranjan Revandkar</p>
-      <small class="card-text">Head Information Security, 
+      <small class="card-text">Head Information Security, <br></br>
 Sun Pharma</small>
     </div>
   </div>
@@ -328,7 +314,7 @@ Sun Pharma</small>
     <div class="card-body text-center text-white">
     <img class="card-img-top" src={s_vikas} style = {{"width":"60%"}}alt="Card"/>
       <p class="font-weight-bold pt-2">Vikas Arora</p>
-      <small class="card-text">Vice President - Global Security and IT, 
+      <small class="card-text">Vice President - Global Security & IT, 
 Toluna</small>
     </div>
   </div>
@@ -336,7 +322,7 @@ Toluna</small>
     <div class="card-body text-center text-white">
     <img class="card-img-top" src={s_souurab} style = {{"width":"60%"}}alt="Card"/>
       <p class="font-weight-bold pt-2">Sourabh Tiwari</p>
-      <small class="card-text">CIO, 
+      <small class="card-text">CIO, <br></br>
 Meril Life</small>
     </div>
   </div>
@@ -344,15 +330,15 @@ Meril Life</small>
     <div class="card-body text-center text-white">
     <img class="card-img-top" src={s_anil} style = {{"width":"60%"}}alt="Card"/>
       <p class="font-weight-bold pt-2">Anil Chiplunkar</p>
-      <small class="card-text">Associate Director, 
-Information Security</small>
+      <small class="card-text">Associate Director -  <br></br>
+Information Security,<br></br>Sciformix Technologies Pvt Ltd.</small>
     </div>
   </div>
   <div class="card darkbg">
     <div class="card-body text-center text-white">
     <img class="card-img-top" src={s_patrick} style = {{"width":"60%"}} alt="Card"/>
       <p class="font-weight-bold pt-2">Patrick Pitchappa</p>
-      <small class="card-text">Head Information Security, 
+      <small class="card-text">Head Information Security, <br></br>
 BNP Paribas ISPL</small>
     </div>
   </div>
@@ -362,7 +348,7 @@ BNP Paribas ISPL</small>
     <div class="card-body text-center text-white">
     <img class="card-img-top" src={s_indranil} style = {{"width":"60%"}} alt="Card"/>
       <p class="font-weight-bold pt-2">Indranil Chatterjee</p>
-      <small class="card-text">GM Security & Compliance, 
+      <small class="card-text">GM Security & Compliance, <br></br>
 Reliance Jio Infocomm</small>
     </div>
   </div>
@@ -379,7 +365,7 @@ Leader IT Risk & Compliance
     <div class="card-body text-center text-white">
     <img class="card-img-top" src={s_himanshu} style = {{"width":"60%"}} alt="Card"/>
       <p class="font-weight-bold pt-2">Himanshu Gaur</p>
-      <small class="card-text">Lead Consultant Cyber Security,
+      <small class="card-text">Lead Consultant Cyber Security,<br></br>
 TCL
 </small>
     </div>
@@ -486,6 +472,16 @@ class AwardsModal extends React.Component {
     this.handleChange = this.handleChange.bind(this)
     this.sendMail = this.sendMail.bind(this)
     this.notify = this.notify.bind(this)
+    this.validate = this.validate.bind(this)
+  }
+  validate(){
+    let validForm = true;
+    ['name', 'designation', 'company', 'phone', 'mail', 'industrysector', 'turnover', 'city', 'initiative', 'security', 'experiance', 'qualify'].forEach(element => {
+      if (this.state[element] === '') {
+        validForm= false
+      } 
+    })
+    return validForm
   }
   notify (){
     toast.success("Thank You! Your Response has been noted", {
@@ -504,6 +500,17 @@ class AwardsModal extends React.Component {
   }
   sendMail(event){
     event.preventDefault()
+    if (!this.validate()){
+      toast.warn('Please fill all the fields!', {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        });
+        return 
+    }
     toast.info('Processing', {
       position: "top-right",
       autoClose: 5000,
@@ -592,12 +599,12 @@ class AwardsModal extends React.Component {
     </div>
     <div className="form-group">
       <label htmlFor="InputComment" className='explain-text'><b>List any 3 security initiatives taken by your organization in the last 6 months
-<small>(Provide comprehensive details to qualify)</small></b></label>
+<small> (Provide comprehensive details to qualify)</small></b></label>
       <textarea className="form-control input-custom" rows="5" id="InputInitiative" name='initiative' onChange={this.handleChange} value={this.state.initiative}></textarea>
     </div>
     <div className="form-group">
-      <label htmlFor="InputComment" className='explain-text'><b>How are you ensuring complete security of your organization? 
-<small>(Elaborate the same.)</small></b></label>
+      <label htmlFor="InputComment" className='explain-text'><b>How are you ensuring complete security of your organization?
+<small> (Elaborate the same.)</small></b></label>
       <textarea className="form-control input-custom" rows="5" id="InputSecurity" name='security' onChange={this.handleChange} value={this.state.security}></textarea>
     </div>
     <div className="form-group">
@@ -626,7 +633,7 @@ class AwardsModal extends React.Component {
 const AwardsText = () => {
   return <div className='container'>
   <h1 className='main-text-font color-white'>Indian CISO Awards.</h1>
-  <p className='mt-5 explain-text color-grey'>{awardsMainpara1} Nominate for the 4th edition summit <a  data-toggle="modal" data-target="#myModal"> <bold className='text-white'>Here</bold>
+  <p className='mt-5 explain-text color-grey'>{awardsMainpara1} Nominate for the 4th edition summit <a  data-toggle="modal" data-target="#myModal"> <bold className='text-white' style={{fontWeight:'bolder'}}>here</bold>
 </a></p>
   </div>
 }
@@ -711,7 +718,7 @@ class Register extends React.Component {
   sendMail(event){
     event.preventDefault()
     if (!this.validate()){
-      toast.warn('Please fill the following Full Name, Deisgnation, Company, Phone, Email and I Want Option', {
+      toast.warn('Please fill the following Full Name, Designation, Company, Phone, Email and I Want Option', {
         position: "top-right",
         autoClose: 5000,
         hideProgressBar: false,
