@@ -32,6 +32,7 @@ import s_indranil from './indranil.png';
 import s_ninad from './ninad.png';
 import s_himanshu from './himanshu.png';
 import s_sridhar from './sridhar.png'
+import s_anis from './anis.png'
 
 
 import series_circle_1 from './series_circle_1.png';
@@ -371,6 +372,12 @@ TCL
     </div>
   </div>
   <div class="card darkbg">
+  <div class="card-body text-center text-white">
+    <img class="card-img-top" src={s_anis} style = {{"width":"60%"}} alt="Card"/>
+      <p class="font-weight-bold pt-2">Anis Pankhania</p>
+      <small class="card-text">Head – Security Compliance <br></br>& Data Privacy, <br></br>Vodafone Idea
+</small>
+    </div>
   </div>
   </div>
   </div>
