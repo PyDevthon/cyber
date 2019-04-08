@@ -188,6 +188,7 @@ export const mapOptions = {
   };
 
 export const initialState = {
+  "source":"Register",
   'optionsRadios':'',
   'name':'',
   'designation': '',

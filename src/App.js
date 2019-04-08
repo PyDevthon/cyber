@@ -463,7 +463,9 @@ pauseOnHover
 class AwardsModal extends React.Component {
   constructor(){
     super()
-    this.state = {"name":"",
+    this.state = {
+    "source":"Awards",  
+    "name":"",
     "designation":"",
     "company":"",
     "phone": "",
@@ -501,7 +503,7 @@ class AwardsModal extends React.Component {
       });
   }
   handleChange(event){
-    const value = event.target.type === 'checkbox' ? event.target.checked : event.target.value;
+    const value = event.target.type === 'checkbox' ? event.target.checked : event.target.value.replace(/\n|\r/g, ' ');
     const name = event.target.name
     this.setState({[name]: value})
   }
@@ -708,7 +710,7 @@ class Register extends React.Component {
       });
   }
   handleChange(event){
-    const value = event.target.type === 'checkbox' ? event.target.checked : event.target.value;
+    const value = event.target.type === 'checkbox' ? event.target.checked : event.target.value.replace(/\n|\r/g, ' ');
     const name = event.target.name
     this.setState({[name]: value})
   }
