@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import HttpsRedirect from 'react-https-redirect';
 
 
 // Router 
@@ -33,6 +34,7 @@ import s_ninad from './ninad.png';
 import s_himanshu from './himanshu.png';
 import s_sridhar from './sridhar.png'
 import s_anis from './anis.png'
+import s_ravinder from './ravinder.png'
 
 
 import series_circle_1 from './series_circle_1.png';
@@ -53,6 +55,25 @@ import {mapOptions, initialState, landingTextheading, landingTextpara, seriesMai
 
 const Cube = () => {
   return <canvas id ='canvasOne' width="600" height="520"></canvas>
+}
+
+
+
+ 
+// you can just wrap your entire app to redirect it to the equivalent https version
+// for example:
+// http://example.com/    =>    https://example.com/
+ 
+// you can also use a "disabled" prop to dinamically disable it
+// <HttpsRedirect disabled={...}>
+ 
+class HttpsApp extends React.Component {
+ 
+  render() {
+    return (
+      <HttpsRedirect><App /></HttpsRedirect>
+    );
+  }
 }
 
 // Router 
@@ -236,6 +257,7 @@ const Speakers = () => {
   <ul className="carousel-indicators custom-carousel">
     <li data-target="#demo" data-slide-to="0" className="active"></li>
     <li data-target="#demo" data-slide-to="1"></li>
+    <li data-target="#demo" data-slide-to="2"></li>
   </ul>
   <div className="carousel-inner">
   <div className="carousel-item active">
@@ -296,7 +318,7 @@ Advisory Services, Ernst & Young</small>
     <div class="card-body text-center text-white">
     <img class="card-img-top" src={s_puneet} style = {{"width":"60%"}}alt="Card"/>
       <p class="font-weight-bold pt-2">Adv. Puneet Bhasin</p>
-      <small class="card-text">Adv. Puneet Bhasin  Cyber Law Expert, Owner - Cyberjure Legal Consulting</small>
+      <small class="card-text">Cyber Law Expert, Owner - Cyberjure Legal Consulting</small>
     </div>
   </div>
   <div class="card darkbg">
@@ -378,6 +400,33 @@ TCL
       <small class="card-text">Head – Security Compliance <br></br>& Data Privacy, <br></br>Vodafone Idea
 </small>
     </div>
+  </div>
+  </div>
+  </div>
+  <div className="carousel-item">
+  <div class="card-deck mt-5">
+    <div class="card darkbg">
+    <div class="card-body text-center text-white">
+    <img class="card-img-top" src={s_ravinder} style = {{"width":"60%"}}alt="Card"/>
+      <p class="font-weight-bold pt-2">Ravinder Arora</p>
+      <small class="card-text"> Head Information Security, <br></br>IRIS Software </small>
+    </div>
+  </div>
+  <div class="card darkbg">
+  </div>
+  <div class="card darkbg">
+  </div>
+  <div class="card darkbg">
+  </div>
+  </div> 
+  <div class="card-deck mt-4">
+  <div class="card darkbg">
+  </div>
+   <div class="card darkbg">
+  </div>
+  <div class="card darkbg">
+  </div>
+  <div class="card darkbg">
   </div>
   </div>
   </div>
@@ -528,7 +577,8 @@ class AwardsModal extends React.Component {
       pauseOnHover: true,
       draggable: true,
       });
-    fetch('https://consumex-mail.herokuapp.com/mail/', {
+      // https://consumex-mail.herokuapp.com/mail/
+    fetch('http://localhost:8000/mail/', {
       method: "POST", // *GET, POST, PUT, DELETE, etc.
       headers: {
           "Content-Type": "application/json; charset=utf-8",
@@ -745,7 +795,7 @@ class Register extends React.Component {
       pauseOnHover: true,
       draggable: true,
       });
-    fetch('https://consumex-mail.herokuapp.com/mail/', {
+    fetch('http://localhost:8000/mail/', {
       method: "POST", // *GET, POST, PUT, DELETE, etc.
       headers: {
           "Content-Type": "application/json; charset=utf-8",
