@@ -578,7 +578,7 @@ class AwardsModal extends React.Component {
       draggable: true,
       });
       // https://consumex-mail.herokuapp.com/mail/
-    fetch('http://localhost:8000/mail/', {
+    fetch('https://consumex-mail.herokuapp.com/mail/', {
       method: "POST", // *GET, POST, PUT, DELETE, etc.
       headers: {
           "Content-Type": "application/json; charset=utf-8",
@@ -795,7 +795,7 @@ class Register extends React.Component {
       pauseOnHover: true,
       draggable: true,
       });
-    fetch('http://localhost:8000/mail/', {
+    fetch('https://consumex-mail.herokuapp.com/mail/', {
       method: "POST", // *GET, POST, PUT, DELETE, etc.
       headers: {
           "Content-Type": "application/json; charset=utf-8",
