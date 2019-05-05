@@ -35,7 +35,10 @@ import s_himanshu from './himanshu.png';
 import s_sridhar from './sridhar.png'
 import s_anis from './anis.png'
 import s_ravinder from './ravinder.png'
-
+import main from './main.png';
+import main_logo from './main_logo.png';
+import india_core from './india_core.png';
+import trade_briefs from './trade_briefs.png';
 
 import series_circle_1 from './series_circle_1.png';
 import series_circle_2 from './series_circle_2.png';
@@ -98,9 +101,18 @@ class App extends Component {
 const Construction = () => (
   <div className='container'>
   <NavBar iss={iss_logo_white} bars={bars_white}></NavBar>
-<div className='justify-content-center d-flex text-white' style={{marginTop:"25%"}}>
-  <h1>This Page is under construction. We'll be here soon</h1>
-</div>
+{/* <div className='justify-content-center d-flex text-white' style={{marginTop:"25%"}}>
+
+</div> */}
+  <h3 style = {{textAlign: 'center'}} className='color-white mt-5 mb-5 loading-text-font'>Supported by</h3>
+  <div className='container d-flex justify-content-center'>
+  <img src={main_logo} alt='main-logo'></img>
+  </div>
+  <h3 style = {{textAlign: 'center'}} className='color-white mt-5 mb-5 loading-text-font mt-5'>Media Partners</h3>
+  <div className='container d-flex justify-content-center'>
+  <img src={india_core} alt='p1' ></img>
+  <img src={trade_briefs} alt='p2' className='ml-5'></img>
+  </div>
   <Menu></Menu>
   </div>
 );
@@ -152,12 +164,12 @@ const Home = () => {
     <div>
     <NavBar iss={iss_logo_white} bars={bars_white}></NavBar>
     </div>
-    <div className="container-fluid top" style = {{"marginTop": "120px"}}>
+    <div className="container-fluid top" style = {{"marginTop": "80px"}}>
   <div className="row">
       <div className="col-lg-6">
       <LandingText></LandingText>
       </div>
-      <div className="col-lg-6" style = {{"marginTop": "-70px"}}>
+      <div className="col-lg-6" style = {{"marginTop": "30px"}}>
       <Cube></Cube>
       </div>
   </div>
@@ -169,6 +181,7 @@ const Home = () => {
 
 const LandingText = () => {
   return <div className='container'>
+  <span className = 'color-white mr-4'>Supported By: </span><img alt= 'logo' className = 'mb-5' src={main}></img>
   <h1 className='main-text-font color-white'>{landingTextheading}</h1>
   <p className='mt-5 explain-text color-grey'>{landingTextpara}</p>
   </div>
@@ -576,9 +589,8 @@ class AwardsModal extends React.Component {
       closeOnClick: true,
       pauseOnHover: true,
       draggable: true,
-      });
-      // https://consumex-mail.herokuapp.com/mail/
-    fetch('http://localhost:8000/mail/', {
+      })
+    fetch('https://consumex-mail.herokuapp.com/mail/', {
       method: "POST", // *GET, POST, PUT, DELETE, etc.
       headers: {
           "Content-Type": "application/json; charset=utf-8",
@@ -795,7 +807,7 @@ class Register extends React.Component {
       pauseOnHover: true,
       draggable: true,
       });
-    fetch('http://localhost:8000/mail/', {
+    fetch('https://consumex-mail.herokuapp.com/mail/', {
       method: "POST", // *GET, POST, PUT, DELETE, etc.
       headers: {
           "Content-Type": "application/json; charset=utf-8",
@@ -974,4 +986,4 @@ class ConsumexMap extends Component {
 
 
 
-export default App;
+export default HttpsApp;
