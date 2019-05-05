@@ -589,7 +589,8 @@ class AwardsModal extends React.Component {
       closeOnClick: true,
       pauseOnHover: true,
       draggable: true,
-      })
+      });
+      // https://consumex-mail.herokuapp.com/mail/
     fetch('https://consumex-mail.herokuapp.com/mail/', {
       method: "POST", // *GET, POST, PUT, DELETE, etc.
       headers: {
@@ -811,7 +812,6 @@ class Register extends React.Component {
       method: "POST", // *GET, POST, PUT, DELETE, etc.
       headers: {
           "Content-Type": "application/json; charset=utf-8",
-          // "Content-Type": "application/x-www-form-urlencoded",
       },
       body: JSON.stringify(this.state), // body data type must match "Content-Type" header
   }).then((response)=> {
