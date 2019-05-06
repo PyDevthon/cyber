@@ -36,10 +36,12 @@ import s_sridhar from './sridhar.png'
 import s_anis from './anis.png'
 import s_ravinder from './ravinder.png'
 import main from './main.png';
-import main_logo from './main_logo.png';
-import india_core from './india_core.png';
-import trade_briefs from './trade_briefs.png';
-
+import core from './core.png';
+import trade from './trade.png';
+import seclore from './seclore.png';
+import si_cyber from './si_cyber.png';
+import microsoft from './microsoft.png';
+import cyber from './cyber_proof.png';
 import series_circle_1 from './series_circle_1.png';
 import series_circle_2 from './series_circle_2.png';
 import series_circle_3 from './series_circle_3.png';
@@ -88,7 +90,7 @@ class App extends Component {
         <Route exact path="/contact" component={Contact} />
         <Route exact path="/about" component={AboutUs} />
         <Route exact path="/series" component={Series} />
-        <Route exact path="/partners" component={Construction} />
+        <Route exact path="/partners" component={Partners} />
         <Route exact path="/awards" component = {Awards}/>
         <Route exact path="/register" component = {Register}/>
         <Route exact path="/speaker" component = {Speakers}/>
@@ -98,20 +100,55 @@ class App extends Component {
   }
 }
 
-const Construction = () => (
+const Partners = () => (
   <div className='container'>
   <NavBar iss={iss_logo_white} bars={bars_white}></NavBar>
 {/* <div className='justify-content-center d-flex text-white' style={{marginTop:"25%"}}>
 
 </div> */}
-  <h3 style = {{textAlign: 'center'}} className='color-white mt-5 mb-5 loading-text-font'>Supported by</h3>
-  <div className='container d-flex justify-content-center'>
-  <img src={main_logo} alt='main-logo'></img>
+<div className="container text-white loading-text-font mt-2">
+  <div className="row">
+    <div className="col">
+    <h3 className='text-center mb-5'>Platinum Partner</h3>
+    <div className='d-flex justify-content-center'>
+    <img src={cyber} alt='cyber'></img>
+    </div>
+    </div>
+    <div className="col">
+    <h3 className='text-center mb-5'>Associate Partner</h3>
+    <div className='d-flex justify-content-center'>
+    <img src={microsoft} alt='microsoft'></img>
+    </div>
+    </div>
   </div>
-  <h3 style = {{textAlign: 'center'}} className='color-white mt-5 mb-5 loading-text-font mt-5'>Media Partners</h3>
-  <div className='container d-flex justify-content-center'>
-  <img src={india_core} alt='p1' ></img>
-  <img src={trade_briefs} alt='p2' className='ml-5'></img>
+  <div className="row" style={{marginTop:'100px'}}>
+    <div className="col">
+    <h3 className='text-center mb-5'>Workshop Partner</h3>
+    <div className='d-flex justify-content-center'>
+    <img src={si_cyber} alt='microsoft'></img>
+    </div>
+    </div>
+    <div className="col">
+    <h3 className='text-center mb-5'>Awards Partner</h3>
+    <div className='d-flex justify-content-center'>
+    <img src={seclore} alt='seclore' style={{marginTop:"60px"}}></img>
+    </div>
+    </div>
+  </div>
+  <div className="row mt-5">
+    <div className="col">
+    <h3 className='text-center mb-5'>Media Partners</h3>
+    <div className='d-flex justify-content-center'>
+    <img src={core} alt='core' className='mb-2'></img>
+    <div className='d-flex justify-content-center'>
+    <img src={trade} alt='trade' className='ml-5 mb-5 mt-2'></img>
+    </div>
+    </div>
+    </div>
+  </div>
+  <div className='mt-5'>
+  <h1></h1>
+    </div>
   </div>
   <Menu></Menu>
   </div>
@@ -181,7 +218,9 @@ const Home = () => {
 
 const LandingText = () => {
   return <div className='container'>
-  <span className = 'color-white mr-4'>Supported By: </span><img alt= 'logo' className = 'mb-5' src={main}></img>
+  <div className='container d-flex'>
+  <span className = 'color-white mr-4' style={{marginTop:"35px"}}>Supported By: </span><img alt= 'logo' className = 'mb-5' src={main}></img>
+  </div>
   <h1 className='main-text-font color-white'>{landingTextheading}</h1>
   <p className='mt-5 explain-text color-grey'>{landingTextpara}</p>
   </div>
