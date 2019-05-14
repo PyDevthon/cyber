@@ -35,6 +35,8 @@ import s_himanshu from './himanshu.png';
 import s_sridhar from './sridhar.png'
 import s_anis from './anis.png'
 import s_ravinder from './ravinder.png'
+import s_smith from './smith.png'
+import s_makesh from './makesh.png'
 import main from './main.png';
 import core from './core.png';
 import trade from './trade.png';
@@ -50,6 +52,7 @@ import medium_gear from './medium_gear.png';
 import large_gear from './large_gear.png';
 
 import award_image from './awards.png';
+import morphisec from './morphisec.png';
 
 
 // constants
@@ -111,27 +114,33 @@ const Partners = () => (
     <div className="col">
     <h3 className='text-center mb-5'>Platinum Partner</h3>
     <div className='d-flex justify-content-center'>
-    <img src={cyber} alt='cyber'></img>
+   <a href='https://www.cyberproof.com/'> <img src={cyber} alt='cyber'></img></a>
     </div>
     </div>
     <div className="col">
     <h3 className='text-center mb-5'>Associate Partner</h3>
     <div className='d-flex justify-content-center'>
-    <img src={microsoft} alt='microsoft'></img>
+    <a href='https://www.microsoft.com/'><img src={microsoft} alt='microsoft'></img></a>
     </div>
     </div>
   </div>
   <div className="row" style={{marginTop:'100px'}}>
+  <div className="col">
+    <h3 className='text-center mb-5'>Silver Partner</h3>
+    <div className='d-flex justify-content-center mt-5'>
+    <a href='https://www.morphisec.com/'><img src={morphisec} alt='morphisec'></img></a>
+    </div>
+    </div>
     <div className="col">
     <h3 className='text-center mb-5'>Workshop Partner</h3>
     <div className='d-flex justify-content-center'>
-    <img src={si_cyber} alt='microsoft'></img>
+   <a href='https://www.siconsult.com/'> <img src={si_cyber} alt='microsoft'></img></a>
     </div>
     </div>
     <div className="col">
     <h3 className='text-center mb-5'>Awards Partner</h3>
     <div className='d-flex justify-content-center'>
-    <img src={seclore} alt='seclore' style={{marginTop:"60px"}}></img>
+    <a href='https://www.seclore.com/'><img src={seclore} alt='seclore' style={{marginTop:"60px"}}></img></a>
     </div>
     </div>
   </div>
@@ -139,9 +148,9 @@ const Partners = () => (
     <div className="col">
     <h3 className='text-center mb-5'>Media Partners</h3>
     <div className='d-flex justify-content-center'>
-    <img src={core} alt='core' className='mb-2'></img>
+    <a href='http://www.indiacore.com/'><img src={core} alt='core' className='mb-2'></img></a>
     <div className='d-flex justify-content-center'>
-    <img src={trade} alt='trade' className='ml-5 mb-5 mt-2'></img>
+    <a href='https://www.tradebriefs.com/'><img src={trade} alt='trade' className='ml-5 mb-5 mt-2'></img></a>
     </div>
     </div>
     </div>
@@ -316,11 +325,11 @@ const Speakers = () => {
   <div class="card-deck mt-5">
   <div class="card darkbg">
   <div class="card-body text-center text-white">
-    <img class="card-img-top" src={s_sridhar} style = {{"width":"60%"}} alt="Card"/>
-      <p class="font-weight-bold pt-2">Sridhar Govardhan</p>
+    <img class="card-img-top" src={s_smith} style = {{"width":"60%"}} alt="Card"/>
+      <p class="font-weight-bold pt-2">Smith Gonsalves</p>
       <small class="card-text">
-CISO, <br></br>
-Wipro Limited
+      Cyber Security Consultant, <br></br>
+      MitKat Advisory Services
 </small>
     </div>
   </div>
@@ -429,10 +438,10 @@ Reliance Jio Infocomm</small>
   </div>
    <div class="card darkbg">
     <div class="card-body text-center text-white">
-    <img class="card-img-top" src={s_ninad} style = {{"width":"60%"}} alt="Card"/>
-      <p class="font-weight-bold pt-2">Ninad Dhavse</p>
-      <small class="card-text">National Stock Exchange(NSE),
-Leader IT Risk & Compliance
+    <img class="card-img-top" src={s_makesh} style = {{"width":"60%"}} alt="Card"/>
+      <p class="font-weight-bold pt-2">Makesh Chandramohan</p>
+      <small class="card-text">CISO,<br></br>
+      Aditya Birla Capital
 </small>
     </div>
   </div>
