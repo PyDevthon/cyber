@@ -753,8 +753,7 @@ class AwardsModal extends React.Component {
 const AwardsText = () => {
   return <div className='container'>
   <h1 className='main-text-font color-white'>Indian CISO Awards.</h1>
-  <p className='mt-5 explain-text color-grey'>{awardsMainpara1} Nominate for the 4th edition summit <a  data-toggle="modal" data-target="#myModal"> <bold className='text-white' style={{fontWeight:'bolder'}}>here</bold>
-</a></p>
+  <p className='mt-5 explain-text color-grey'>{awardsMainpara1} <bold className='text-white'>Nomination for the 4th edition summit  are closed!</bold></p>
   </div>
 }
 
@@ -952,7 +951,7 @@ class Register extends React.Component {
       <label htmlFor="InputComment" className='explain-text'><b>COMMENTS</b></label>
       <textarea className="form-control input-custom" rows="5" id="commenttext" name='comment' onChange={this.handleChange} value={this.state.comment}></textarea>
     </div>
-  <button type="submit" className="btn btn-dark mb-5" onClick={this.sendMail}>Submit</button>
+  <button type="submit" className="btn btn-dark mb-5" onClick={this.sendMail} disabled>Registrations Are Closed</button>
     </form>
     </div>
     <ToastContainer
