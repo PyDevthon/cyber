@@ -56,6 +56,7 @@ import series_circle_1 from './series_circle_1.png';
 import series_circle_2 from './series_circle_2.png';
 import series_circle_3 from './series_circle_3.png';
 import mitkat from './mitkat.png';
+import mit from './logo.png';
 
 
 import medium_gear from './medium_gear.png';
@@ -150,7 +151,7 @@ const Partners = () => (
     <div className="col">
     <h3 className='text-center mb-5'>Knowledge Partner</h3>
     <div className='d-flex justify-content-center'>
-    <a href='https://www.mitkatadvisory.com/'><img src={mitkat} alt='mitkat' style={{marginTop:"60px"}}></img></a>
+    <a href='https://www.mitkatadvisory.com/'><span><img src={mit} alt='mitkat' style={{marginTop:"60px",marginTop:'20px', width:'120%'}}></img></span></a>
     </div>
     </div>
   </div>
