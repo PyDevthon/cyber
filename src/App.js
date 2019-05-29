@@ -481,7 +481,7 @@ TCL
     <div class="card-body text-center text-white">
     <img class="card-img-top" src={s_vaibhav} style = {{"width":"60%"}}alt="Card"/>
       <p class="font-weight-bold pt-2">Vaibhav Gupta</p>
-      <small class="card-text"> Vaibhav Gupta  Technology Specialist - Cyber Threat Management,<br></br>IRIS Software </small>
+      <small class="card-text"> Vaibhav Gupta  Technology Specialist - Cyber Threat Management,<br></br>Microsoft Corporation (India)</small>
     </div>
   </div>
   <div class="card darkbg">
