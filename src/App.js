@@ -37,6 +37,14 @@ import s_anis from './anis.png'
 import s_ravinder from './ravinder.png'
 import s_smith from './smith.png'
 import s_makesh from './makesh.png'
+
+import s_yogesh from './yogesh.png'
+import s_snaket from './snaket.png'
+import s_deodatta from './deodatta.png'
+import s_nilesh from './nilesh.png'
+import s_yair from './yair.png'
+import s_vaibhav from './vaibhav.png'
+
 import main from './main.png';
 import core from './core.png';
 import trade from './trade.png';
@@ -47,6 +55,8 @@ import cyber from './cyber_proof.png';
 import series_circle_1 from './series_circle_1.png';
 import series_circle_2 from './series_circle_2.png';
 import series_circle_3 from './series_circle_3.png';
+import mitkat from './mitkat.png';
+
 
 import medium_gear from './medium_gear.png';
 import large_gear from './large_gear.png';
@@ -138,9 +148,9 @@ const Partners = () => (
     </div>
     </div>
     <div className="col">
-    <h3 className='text-center mb-5'>Awards Partner</h3>
+    <h3 className='text-center mb-5'>Knowledge Partner</h3>
     <div className='d-flex justify-content-center'>
-    <a href='https://www.seclore.com/'><img src={seclore} alt='seclore' style={{marginTop:"60px"}}></img></a>
+    <a href='https://www.mitkatadvisory.com/'><img src={mitkat} alt='mitkat' style={{marginTop:"60px"}}></img></a>
     </div>
     </div>
   </div>
@@ -468,22 +478,54 @@ TCL
   <div class="card-deck mt-5">
     <div class="card darkbg">
     <div class="card-body text-center text-white">
-    <img class="card-img-top" src={s_ravinder} style = {{"width":"60%"}}alt="Card"/>
-      <p class="font-weight-bold pt-2">Ravinder Arora</p>
-      <small class="card-text"> Head Information Security, <br></br>IRIS Software </small>
+    <img class="card-img-top" src={s_vaibhav} style = {{"width":"60%"}}alt="Card"/>
+      <p class="font-weight-bold pt-2">Vaibhav Gupta</p>
+      <small class="card-text"> Vaibhav Gupta  Technology Specialist - Cyber Threat Management,<br></br>IRIS Software </small>
     </div>
   </div>
   <div class="card darkbg">
+
+  <div class="card-body text-center text-white">
+    <img class="card-img-top" src={s_yair} style = {{"width":"60%"}}alt="Card"/>
+      <p class="font-weight-bold pt-2">Yair Bar Touv</p>
+      <small class="card-text"> Vice President Business Development<br></br>CyberProof (UST Global)</small>
+    </div>
+
   </div>
   <div class="card darkbg">
+
+  <div class="card-body text-center text-white">
+    <img class="card-img-top" src={s_nilesh} style = {{"width":"60%"}}alt="Card"/>
+      <p class="font-weight-bold pt-2">Nilesh Burghate</p>
+      <small class="card-text"> SOC Head <br></br>Si Cyber</small>
+    </div>
+
   </div>
   <div class="card darkbg">
+
+  <div class="card-body text-center text-white">
+    <img class="card-img-top" src={s_deodatta} style = {{"width":"60%"}}alt="Card"/>
+      <p class="font-weight-bold pt-2">Deodatta Wandhekar</p>
+      <small class="card-text"> SOC Manager,<br></br>Si Cyber </small>
+    </div>
+
   </div>
   </div> 
   <div class="card-deck mt-4">
   <div class="card darkbg">
+  <div class="card-body text-center text-white">
+    <img class="card-img-top" src={s_snaket} style = {{"width":"60%"}}alt="Card"/>
+      <p class="font-weight-bold pt-2">Sanket Kanolkar</p>
+      <small class="card-text"> COO & MD-Asia,<br></br>Si Cyber</small>
+    </div>
+
   </div>
    <div class="card darkbg">
+   <div class="card-body text-center text-white">
+    <img class="card-img-top" src={s_yogesh} style = {{"width":"60%"}}alt="Card"/>
+      <p class="font-weight-bold pt-2">Yogesh Jaipurkar</p>
+      <small class="card-text"> Director - Software Engineering,<br></br>Leading Managed Security Services Company</small>
+    </div>
   </div>
   <div class="card darkbg">
   </div>
